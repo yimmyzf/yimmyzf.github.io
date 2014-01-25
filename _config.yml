@@ -2,7 +2,8 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yimmyzf.github.io
+url: http://yimmyzf.com
+#url: http://yimmyzf.github.io
 title: 静水流深
 subtitle: 等待绽放
 author: yimmy
@@ -94,7 +95,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id:UA-47052000-1
 
 # Facebook Like
 facebook_like: false
