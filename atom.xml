@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[静水流深]]></title>
+  <title><![CDATA[A sentence A picture A day!]]></title>
   <link href="http://yimmyzf.github.io/atom.xml" rel="self"/>
   <link href="http://yimmyzf.github.io/"/>
-  <updated>2014-01-10T22:15:26+08:00</updated>
+  <updated>2014-03-09T23:13:06+08:00</updated>
   <id>http://yimmyzf.github.io/</id>
   <author>
     <name><![CDATA[yimmy]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[0309]]></title>
+    <link href="http://yimmyzf.github.io/blog/2014/03/09/0309/"/>
+    <updated>2014-03-09T22:47:43+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2014/03/09/0309</id>
+    <content type="html"><![CDATA[<h3>Today I finish a DATA analysis</h3>
+
+<p>将300个不同城市的用户搜索行为进行分析，主要关注点为搜索化妆品的时间，将数据打标签将时间提取
+下图为化妆品的搜索时间</p>
+
+<p><img src="http://yimmyzf.github.io/images/0309.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
