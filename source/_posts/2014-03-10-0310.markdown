@@ -1,0 +1,16 @@
+---
+layout: post
+title: "0310"
+date: 2014-03-10 23:24:53 +0800
+comments: true
+categories: 
+---
+
+###Talk with a school mate###
+To summarize the occupation plan of the data analysis
+
+To get more information
+
+I hope to use my model or code one day into practical business--FALL TO THE GROUND^--^ 
+
+{% img /images/0310.jpg %} 

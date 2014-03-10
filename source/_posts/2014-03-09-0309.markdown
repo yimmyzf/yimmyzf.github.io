@@ -1,0 +1,14 @@
+---
+layout: post
+title: "0309"
+date: 2014-03-09 22:47:43 +0800
+comments: true
+categories: 
+---
+
+###Today I finish a DATA analysis###
+将300个不同城市的用户搜索行为进行分析，主要关注点为搜索化妆品的时间，将数据打标签将时间提取
+下图为化妆品的搜索时间
+
+{% img /images/0309.png %} 
+
