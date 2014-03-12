@@ -4,7 +4,7 @@
   <title><![CDATA[A sentence A picture A day!]]></title>
   <link href="http://yimmyzf.github.io/atom.xml" rel="self"/>
   <link href="http://yimmyzf.github.io/"/>
-  <updated>2014-03-10T23:35:19+08:00</updated>
+  <updated>2014-03-12T23:07:28+08:00</updated>
   <id>http://yimmyzf.github.io/</id>
   <author>
     <name><![CDATA[yimmy]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[0311]]></title>
+    <link href="http://yimmyzf.github.io/blog/2014/03/11/0311/"/>
+    <updated>2014-03-11T21:45:04+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2014/03/11/0311</id>
+    <content type="html"><![CDATA[<h3>A fix</h3>
+
+<p>执行<strong>git push</strong> 警告warning: push.default is unset; its implicit value is changing in Git 2.0 from &lsquo;matching&rsquo; to &lsquo;simple&rsquo;.</p>
+
+<blockquote><p>$ git &mdash;version
+git version 1.8.3.4 (Apple Git-47)</p></blockquote>
+
+<p>push.default，可以设置为nothing, matching, upstream, simple, current这些值。推荐git config &mdash;global push.default simple</p>
+
+<h3>MY drawing ^ &ndash; ^</h3>
+
+<p><img src="http://yimmyzf.github.io/images/0311.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[0310]]></title>
