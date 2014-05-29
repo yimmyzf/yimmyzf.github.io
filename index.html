@@ -9,7 +9,8 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="很久没用Octopress写作了，原本熟悉的命令记不清:( 回归“像黑客一样写作”的战地 创建文章 进入octopress文件夹 cd octopress rake new_post[&ldquo;My bolg&rdquo;] 此时进入source目录下的_posts文件夹会生成新建的文章 &hellip;">
+  <meta name="description" content="对自己常用的进行一个小结，希望能更好的用它来writing。
+小结了第一版之后发现还是翻译官方文档吧。。。markdown。 网页版markdown 标题 #H1 ##H2 ###H3 H1 ===== H2 &mdash;&mdash;&ndash; 强调 斜体 ： *星号* 或者 _下划线_ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +65,201 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/29/markdownxiao-jie/">Markdown小结</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T17:15:32+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>对自己常用的进行一个小结，希望能更好的用它来writing。
+小结了第一版之后发现还是翻译官方文档吧。。。<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">markdown</a>。</p>
+
+<p>网页版<a href="http://markdown-here.com/livedemo.html">markdown</a></p>
+
+<h2>标题</h2>
+
+<blockquote><p>   #H1</p>
+
+<p>   ##H2</p>
+
+<p>   ###H3</p>
+
+<p>   H1  =====</p>
+
+<p>  H2   &mdash;&mdash;&ndash;</p></blockquote>
+
+<h2>强调</h2>
+
+<blockquote><pre><code>斜体 ： *星号* 或者 _下划线_
+加粗：**星号\**   __下划线__
+斜体和加粗: **__**
+划去：~~划去~~
+</code></pre></blockquote>
+
+<h2>区块引用</h2>
+
+<blockquote><p>   使用>在每行的最前面 表示区块
+   使用>>进行嵌套</p></blockquote>
+
+<h2>列表</h2>
+
+<p>无序列表使用 * 或 — 或 +。
+有序列表 数字接英文句点 空格:</p>
+
+<ol>
+<li></li>
+<li></li>
+</ol>
+
+
+<h2>链接</h2>
+
+<p> [text](url &ldquo;title&rdquo;) title可省
+参考式的[google] 后接[google]:<a href="http://www.google.com/">http://www.google.com/</a>
+参考式的[google][1] 后接[1]:<a href="http://www.google.com/">http://www.google.com/</a></p>
+
+<h2>图片</h2>
+
+<ol>
+<li>![Alt text](/images/img.jpg &ldquo;title&rdquo;)</li>
+<li> 我自己常用的是 &lt;img src=&ldquo;/images/0311.jpg&rdquo; width=&ldquo;200&rdquo; height=&ldquo;200&rdquo; /></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/29/protocol/">Protocol</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T16:40:09+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>[TOC]</p>
+
+<p>回归写作第一篇
+关于协议</p>
+
+<p><strong>层模型</strong>
+因特网协议栈<strong>五层模型</strong>：应用层、传输层、网络层、链路层、物理层</p>
+
+<p>OSI <strong>七层模型</strong>:应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</p>
+
+<p>每一层都有各自的协议</p>
+
+<p><strong>物理层</strong></p>
+
+<p>电脑组网：光纤、电缆、双绞线、无线电波；传输0、1电信号</p>
+
+<p><strong>链路层</strong></p>
+
+<p>以太网Ethernet 一组电信号构成一个“帧”
+Head：18字节
+Data：46~1500字节</p>
+
+<p>MAC地址
+以太网规定，入网的设备必须有“网卡”接口。MAC地址&mdash;网卡的地址，独一无二，12个十六进制数表示
+以太网中数据包的送达：向本网络中所有的计算机发送，让每台计算机自己判断，是否自己是接受者，与自身MAC地址相同就接收不同就丢弃。</p>
+
+<p><strong>网络层</strong></p>
+
+<p>如果两个计算机不在同一个网络，广播无法到达。
+网络是由无数子网络共同组成的。
+需要一种方法判断MAC地址是否同一子网。同一子网时采用广播方式发送，否则路由查询。
+网络层&mdash;-计算机是否属于同一子网络。网络地址由管理员分配。网络地址确定计算机所在的子网络，MAC地址将数据包送到该子网络中得目标网卡。</p>
+
+<p>IP协议
+“子网掩码”&mdash;判断ip地址是否在同一个网络：将两个IP地址分别与子网掩码进行与运算AND，如果结果相同说明在同一子网。</p>
+
+<p>IP数据包
+整个IP数据包总长度最大为65535字节，若数据包大于1500字节，需分割成几个以太网数据包分开发送</p>
+
+<p>ARP协议（得到同一子网的主机MAC地址）
+一般情况是IP地址已知，但对方的MAC地址未知
+从IP地址得到MAC地址：
+&ndash; 两台主机不在同一子网&mdash;&mdash;让网关处理（需要网关的MAC地址，对方的IP地址）</p>
+
+<p>-两台主机在同一子网&mdash;-通过ARP协议得到对方MAC地址：ARP协议：发出一个数据包，含被查询主机的IP地址，对方MAC地址一栏填FF：FF：FF：FF：FF：FF
+ 收到这个包的主机会取出IP地址与自己的比较。</p>
+
+<p> <strong>传输层</strong></p>
+
+<p> 传来的数据包是哪个程序（进程）使用&mdash;-需要“端口”【每一个使用网卡程序的编号】
+ 端口号为0~65535，其中0~1023被系统占用。</p>
+
+<p> 传输层：端口到端口
+ 网络层：主机到主机
+ Unix系统把主机+端口叫“套接字”socket</p>
+
+<p> UDP：简单易实现 可靠性差
+ TCP：有确认机制的UDP</p>
+
+<p> <strong>应用层</strong></p>
+
+<p> 规定数据格式</p>
+
+<p> 上网</p>
+
+<hr />
+
+<p> 静态地址
+ 本机IP、子网掩码、网关IP、DNS的IP
+ 动态地址  DHCP协议【应用层协议，建立在UDP协议上】
+ 每个子网中有一台计算机负责管理本网络中所有IP地址  “DHCP服务器”</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -270,7 +466,7 @@ git version 1.8.3.4 (Apple Git-47)</p></blockquote>
 
 <h3>MY drawing ^ &ndash; ^</h3>
 
-<p><img src="/images/0311.jpg"></p>
+<p><img src="/images/0311.jpg" width="200" height="200" /></p>
 </div>
   
   
@@ -314,7 +510,7 @@ git version 1.8.3.4 (Apple Git-47)</p></blockquote>
 
 <p>I hope to use my model or code one day into practical business&mdash;FALL TO THE GROUND^&mdash;^</p>
 
-<p><img src="/images/0310.jpg"></p>
+<p><img src="/images/0310.jpg" width="200" height="200" /></p>
 </div>
   
   
@@ -355,7 +551,7 @@ git version 1.8.3.4 (Apple Git-47)</p></blockquote>
 <p>将300个不同城市的用户搜索行为进行分析，主要关注点为搜索化妆品的时间，将数据打标签将时间提取
 下图为化妆品的搜索时间</p>
 
-<p><img src="/images/0309.png"></p>
+<p><img src="/images/0309.png" width="350" height="200" /></p>
 </div>
   
   
@@ -412,6 +608,14 @@ git version 1.8.3.4 (Apple Git-47)</p></blockquote>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/29/markdownxiao-jie/">Markdown小结</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/29/protocol/">Protocol</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/29/octopresstips/">OctopressTips</a>
       </li>
     
@@ -421,14 +625,6 @@ git version 1.8.3.4 (Apple Git-47)</p></blockquote>
     
       <li class="post">
         <a href="/blog/2014/03/12/0312/">0312</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/11/0311/">0311</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/10/0310/">0310</a>
       </li>
     
   </ul>

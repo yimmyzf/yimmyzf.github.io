@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Protocol - A sentence A picture A day!</title>
+  <meta name="author" content="yimmy">
+
+  
+  <meta name="description" content="[TOC] 回归写作第一篇
+关于协议 层模型
+因特网协议栈五层模型：应用层、传输层、网络层、链路层、物理层 OSI 七层模型:应用层、表示层、会话层、传输层、网络层、数据链路层、物理层 每一层都有各自的协议 物理层 电脑组网：光纤、电缆、双绞线、无线电波；传输0、1电信号 链路层 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/05/29/protocol">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">A sentence A picture A day!</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yimmyzf.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Protocol</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T16:40:09+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>[TOC]</p>
+
+<p>回归写作第一篇
+关于协议</p>
+
+<p><strong>层模型</strong>
+因特网协议栈<strong>五层模型</strong>：应用层、传输层、网络层、链路层、物理层</p>
+
+<p>OSI <strong>七层模型</strong>:应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</p>
+
+<p>每一层都有各自的协议</p>
+
+<p><strong>物理层</strong></p>
+
+<p>电脑组网：光纤、电缆、双绞线、无线电波；传输0、1电信号</p>
+
+<p><strong>链路层</strong></p>
+
+<p>以太网Ethernet 一组电信号构成一个“帧”
+Head：18字节
+Data：46~1500字节</p>
+
+<p>MAC地址
+以太网规定，入网的设备必须有“网卡”接口。MAC地址&mdash;网卡的地址，独一无二，12个十六进制数表示
+以太网中数据包的送达：向本网络中所有的计算机发送，让每台计算机自己判断，是否自己是接受者，与自身MAC地址相同就接收不同就丢弃。</p>
+
+<p><strong>网络层</strong></p>
+
+<p>如果两个计算机不在同一个网络，广播无法到达。
+网络是由无数子网络共同组成的。
+需要一种方法判断MAC地址是否同一子网。同一子网时采用广播方式发送，否则路由查询。
+网络层&mdash;-计算机是否属于同一子网络。网络地址由管理员分配。网络地址确定计算机所在的子网络，MAC地址将数据包送到该子网络中得目标网卡。</p>
+
+<p>IP协议
+“子网掩码”&mdash;判断ip地址是否在同一个网络：将两个IP地址分别与子网掩码进行与运算AND，如果结果相同说明在同一子网。</p>
+
+<p>IP数据包
+整个IP数据包总长度最大为65535字节，若数据包大于1500字节，需分割成几个以太网数据包分开发送</p>
+
+<p>ARP协议（得到同一子网的主机MAC地址）
+一般情况是IP地址已知，但对方的MAC地址未知
+从IP地址得到MAC地址：
+&ndash; 两台主机不在同一子网&mdash;&mdash;让网关处理（需要网关的MAC地址，对方的IP地址）</p>
+
+<p>-两台主机在同一子网&mdash;-通过ARP协议得到对方MAC地址：ARP协议：发出一个数据包，含被查询主机的IP地址，对方MAC地址一栏填FF：FF：FF：FF：FF：FF
+ 收到这个包的主机会取出IP地址与自己的比较。</p>
+
+<p> <strong>传输层</strong></p>
+
+<p> 传来的数据包是哪个程序（进程）使用&mdash;-需要“端口”【每一个使用网卡程序的编号】
+ 端口号为0~65535，其中0~1023被系统占用。</p>
+
+<p> 传输层：端口到端口
+ 网络层：主机到主机
+ Unix系统把主机+端口叫“套接字”socket</p>
+
+<p> UDP：简单易实现 可靠性差
+ TCP：有确认机制的UDP</p>
+
+<p> <strong>应用层</strong></p>
+
+<p> 规定数据格式</p>
+
+<p> 上网</p>
+
+<hr />
+
+<p> 静态地址
+ 本机IP、子网掩码、网关IP、DNS的IP
+ 动态地址  DHCP协议【应用层协议，建立在UDP协议上】
+ 每个子网中有一台计算机负责管理本网络中所有IP地址  “DHCP服务器”</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">yimmy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T16:40:09+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/29/octopresstips/" title="Previous Post: OctopressTips">&laquo; OctopressTips</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/29/markdownxiao-jie/" title="Next Post: Markdown小结">Markdown小结 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/29/markdownxiao-jie/">Markdown小结</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/29/protocol/">Protocol</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/29/octopresstips/">OctopressTips</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/0317/">0317</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/12/0312/">0312</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - yimmy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
