@@ -4,7 +4,7 @@
   <title><![CDATA[A sentence A picture A day!]]></title>
   <link href="http://yimmyzf.github.io/atom.xml" rel="self"/>
   <link href="http://yimmyzf.github.io/"/>
-  <updated>2014-05-29T23:11:04+08:00</updated>
+  <updated>2014-06-05T10:52:19+08:00</updated>
   <id>http://yimmyzf.github.io/</id>
   <author>
     <name><![CDATA[yimmy]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[鸡血文]]></title>
+    <link href="http://yimmyzf.github.io/blog/2014/06/05/ji-xie-wen/"/>
+    <updated>2014-06-05T09:20:39+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2014/06/05/ji-xie-wen</id>
+    <content type="html"><![CDATA[<p>  清早，看了一篇文章，让昨天有点down的心情好了很多，将部分文章进行翻译分享一下。
+  文章链接 <a href="http://zenhabits.net/career/">A Guide for Young People: What to Do With Your Life</a></p>
+
+<p>  <strong>学会接受不适</strong></p>
+
+<p>  你能锻炼的最重要的技能之一就是接受不适。最好的事情通常都是困难的，如果你逃避困难和不适，你将错过这些美好的事情。
+  学习、写作、婚姻、马拉松，这些都是不简单的，但是他们都是能给人们打来成就感的。
+  当你发现自己在逃避不适感时，推动自己一下</p>
+
+<p>  <strong>学会接受不确定</strong></p>
+
+<p>  <strong>克服分心与拖延</strong></p>
+
+<p>  你能抓住机会是因为你能够面对不确定性与不适感，但是如果你花时间在社交媒体和看电视上将能难成功。
+  分心与拖延是逃避困难和不适的表现。如果你能很好的接受困难这才是你能有别于其他人。</p>
+
+<p>  <strong>了解你的思维的运作方式</strong></p>
+
+<p>  写博客。你将被迫记录你生活中发生了什么，你学习了什么。这是自我成长的好工具，我推荐给每一给年轻的朋友。</p>
+
+<p>  <strong>小事积累</strong></p>
+
+<p>  从小事做起，如果可能每天都积累，它会随着时间不断增值。</p>
+
+<p>  <strong>变得值得信赖</strong></p>
+
+<p>  每一个任务做到最好，坦率，承认错误改正错误，deadline</p>
+
+<p>  You can start today, and see what life has to offer you.</p>
+
+<hr />
+
+<p>  写这篇文章是因为里面的几个点很触动我：1.迎接不适感与不确定性 2.写博客 3.每一件事情做到最好</p>
+
+<p>  我想这是因为之前的生活顺利，让我这个人缺失了对生活某些方面的理解。这一段的生活在提醒我人不能总生活在舒适区，这样你就是一个生活在脆弱区的人，一旦某天生活面临一个改变，将无所适从。
+  生活之所以有趣有意义，就是因为它能够充满挑战与不确定性，最有意思的地方就是你迎接未知，收获惊喜。我放弃过学习弹琴，放弃过200米，放弃过当一名幼师，放弃过努力选择一个好的lab和intern，曾经的那些非常合理的理由已经没有了意义，如今后悔，所以我知道坚持的意义。</p>
+
+<p>  坚持写博客真的不是容易的事，主要是每天忙到11点多的时候，总是想离开实验室早点休息准备迎接明天，或许是由于生活中自己认为有意义的事太少。change it。</p>
+
+<p>  关于每件事做到最好，是因为最近一个工作中一个简单的报告。再简单，minjun依然能谈到排版，字多图少，以及SQL语句结果中应排查的问题。我觉得哪怕一件再小的事也应该完美点。</p>
+
+<p>  <p style="color:darksalmon">HAVE A NICE DAY！</p></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Markdown小结]]></title>
@@ -167,27 +217,36 @@ Data：46~1500字节</p>
 
 <p>进入octopress文件夹</p>
 
-<blockquote><p>cd octopress</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>rake new_post["My bolg"]</span></code></pre></td></tr></table></div></figure>
 
-<p>rake new_post[&ldquo;My bolg&rdquo;]</p></blockquote>
 
-<p>此时进入source目录下的_posts文件夹会生成新建的文章
-使用文本编辑器打开进行内容的修改</p>
+<p><code>如果执行后遇到“rake aborted! You have already activated rake 10.1.1, but your Gemfile requires rake 0.9.6. Using bundle exec may solve this.”这样的问题，是因为你安装的版本和octopress所用的不符。</code>
+*  你可以按照提示在命令钱直接加bundle exec
+*  如果不想每次都多敲，就更改一下Gemfile的内容吧：我是把 gem &lsquo;rake&rsquo;, &lsquo;~> 0.9&rsquo; 改成了&#8217;10.0&#8217;
+此时进入source目录下的_posts文件夹会生成新建的文章,使用文本编辑器打开进行内容的修改</p>
 
-<p>文章写完后（有中文需要保存成UTF-8格式）
-保存文件生成预览</p>
+<p>文章写完后（有中文需要保存成UTF-8格式）</p>
 
-<blockquote><p>rake generate</p>
+<h4>保存文件生成预览</h4>
 
-<p>rake preview</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
 
 <p>浏览器中输入<a href="http://localhost:4000/">http://localhost:4000/</a>  可查看预览</p>
 
 <p>//创建一个新的页面也与此类似  rake new_page[yummy]</p>
 
-<p>部署到<strong>Github</strong>上去</p>
+<h4>部署到Github上去</h4>
 
-<blockquote><p>rake deploy</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
 
 <p>一些关于octopress的设置可以修改  _config.yml文件内容</p>
 

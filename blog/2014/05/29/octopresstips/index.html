@@ -9,7 +9,10 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="很久没用Octopress写作了，原本熟悉的命令记不清:( 回归“像黑客一样写作”的战地 创建文章 进入octopress文件夹 cd octopress rake new_post[&ldquo;My bolg&rdquo;] 此时进入source目录下的_posts文件夹会生成新建的文章 &hellip;">
+  <meta name="description" content="很久没用Octopress写作了，原本熟悉的命令记不清:( 回归“像黑客一样写作”的战地 创建文章 进入octopress文件夹 1
+2
+cd octopress
+rake new_post["My bolg"] 如果执行后遇到“rake aborted! You have already &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,27 +101,36 @@
 
 <p>进入octopress文件夹</p>
 
-<blockquote><p>cd octopress</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>rake new_post["My bolg"]</span></code></pre></td></tr></table></div></figure>
 
-<p>rake new_post[&ldquo;My bolg&rdquo;]</p></blockquote>
 
-<p>此时进入source目录下的_posts文件夹会生成新建的文章
-使用文本编辑器打开进行内容的修改</p>
+<p><code>如果执行后遇到“rake aborted! You have already activated rake 10.1.1, but your Gemfile requires rake 0.9.6. Using bundle exec may solve this.”这样的问题，是因为你安装的版本和octopress所用的不符。</code>
+*  你可以按照提示在命令钱直接加bundle exec
+*  如果不想每次都多敲，就更改一下Gemfile的内容吧：我是把 gem &lsquo;rake&rsquo;, &lsquo;~> 0.9&rsquo; 改成了&#8217;10.0&#8217;
+此时进入source目录下的_posts文件夹会生成新建的文章,使用文本编辑器打开进行内容的修改</p>
 
-<p>文章写完后（有中文需要保存成UTF-8格式）
-保存文件生成预览</p>
+<p>文章写完后（有中文需要保存成UTF-8格式）</p>
 
-<blockquote><p>rake generate</p>
+<h4>保存文件生成预览</h4>
 
-<p>rake preview</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
 
 <p>浏览器中输入<a href="http://localhost:4000/">http://localhost:4000/</a>  可查看预览</p>
 
 <p>//创建一个新的页面也与此类似  rake new_page[yummy]</p>
 
-<p>部署到<strong>Github</strong>上去</p>
+<h4>部署到Github上去</h4>
 
-<blockquote><p>rake deploy</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
 
 <p>一些关于octopress的设置可以修改  _config.yml文件内容</p>
 
@@ -178,6 +190,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/05/ji-xie-wen/">鸡血文</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/29/markdownxiao-jie/">Markdown小结</a>
       </li>
     
@@ -191,10 +207,6 @@
     
       <li class="post">
         <a href="/blog/2014/03/17/0317/">0317</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/12/0312/">0312</a>
       </li>
     
   </ul>
