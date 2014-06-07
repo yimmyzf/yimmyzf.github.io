@@ -4,7 +4,7 @@
   <title><![CDATA[A sentence A picture A day!]]></title>
   <link href="http://yimmyzf.github.io/atom.xml" rel="self"/>
   <link href="http://yimmyzf.github.io/"/>
-  <updated>2014-06-05T10:52:19+08:00</updated>
+  <updated>2014-06-07T11:25:40+08:00</updated>
   <id>http://yimmyzf.github.io/</id>
   <author>
     <name><![CDATA[yimmy]]></name>
@@ -12,6 +12,97 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Leetcode-atoi]]></title>
+    <link href="http://yimmyzf.github.io/blog/2014/06/07/leetcode-atoi/"/>
+    <updated>2014-06-07T10:37:50+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2014/06/07/leetcode-atoi</id>
+    <content type="html"><![CDATA[<p>Leetcode String to Integer</p>
+
+<p>注意的几点：</p>
+
+<pre><code>* 字符串为空
+* 全是空格
+* 字符串前的空格要忽略掉
+* 对‘+’和‘-’的处理
+* 遇到非数字的字符就返回当前值而不是返回0
+* int的范围  -2147483648~2147483647
+</code></pre>
+
+<p>【判断与int最值比较时记得*signal】</p>
+
+<p>又用Python写了一遍，遇到的小问题：</p>
+
+<pre><code>* 空字符串str==''
+* elif
+* 判断条件中要加入i&lt;len(str)
+* 需要用ord()将字符转换成ASCII码
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Leetcode-merge]]></title>
+    <link href="http://yimmyzf.github.io/blog/2014/06/06/leetcode-merge/"/>
+    <updated>2014-06-06T20:28:37+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2014/06/06/leetcode-merge</id>
+    <content type="html"><![CDATA[<p>leetcode里四道与merge有关的题</p>
+
+<p>Merge Sorted Array
+思路：从结尾开始合并，在数组A中从m+n-1
+记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] <strong>习惯养成</strong></p>
+
+<p>Merge Two Sorted Lists
+先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
+写的很啰嗦，用递归又写了一下</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
+</span><span class='line'>{
+</span><span class='line'>  if(l1==NULL)return l2;
+</span><span class='line'>  if(l2==NULL)return l1;
+</span><span class='line'>  
+</span><span class='line'>  ListNode *rHead=NULL;
+</span><span class='line'>  if(l1-&gt;val&lt;l2-&gt;val)
+</span><span class='line'>  {
+</span><span class='line'>      rHead=l1;
+</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1-&gt;next,l2);
+</span><span class='line'>  }
+</span><span class='line'>  else
+</span><span class='line'>  {
+</span><span class='line'>      rHead=l1;
+</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1,l2-&gt;next);
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  return rHead;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>有个不好的习惯声明的指针变量总是忘记  =NULL</p>
+
+<p>Merge k Sorted Lists
+归并</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[鸡血文]]></title>

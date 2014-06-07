@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>0310 - A sentence A picture A day!</title>
+  <title>Leetcode-merge - A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="Talk with a school mate To summarize the occupation plan of the data analysis To get more information I hope to use my model or code one day into &hellip;">
+  <meta name="description" content="leetcode里四道与merge有关的题 Merge Sorted Array
+思路：从结尾开始合并，在数组A中从m+n-1
+记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] 习惯养成 Merge Two Sorted Lists
+先用循环写了一遍： &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/03/10/0310">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/06/06/leetcode-merge">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -67,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">0310</h1>
+      <h1 class="entry-title">Leetcode-merge</h1>
     
     
       <p class="meta">
@@ -83,22 +86,67 @@
   
 
 
-<time datetime="2014-03-10T23:24:53+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2014</time>
+<time datetime="2014-06-06T20:28:37+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>Talk with a school mate</h3>
+<div class="entry-content"><p>leetcode里四道与merge有关的题</p>
 
-<p>To summarize the occupation plan of the data analysis</p>
+<p>Merge Sorted Array
+思路：从结尾开始合并，在数组A中从m+n-1
+记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] <strong>习惯养成</strong></p>
 
-<p>To get more information</p>
+<p>Merge Two Sorted Lists
+先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
+写的很啰嗦，用递归又写了一下</p>
 
-<p>I hope to use my model or code one day into practical business&mdash;FALL TO THE GROUND^&mdash;^</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
+</span><span class='line'>{
+</span><span class='line'>  if(l1==NULL)return l2;
+</span><span class='line'>  if(l2==NULL)return l1;
+</span><span class='line'>  
+</span><span class='line'>  ListNode *rHead=NULL;
+</span><span class='line'>  if(l1-&gt;val&lt;l2-&gt;val)
+</span><span class='line'>  {
+</span><span class='line'>      rHead=l1;
+</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1-&gt;next,l2);
+</span><span class='line'>  }
+</span><span class='line'>  else
+</span><span class='line'>  {
+</span><span class='line'>      rHead=l1;
+</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1,l2-&gt;next);
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  return rHead;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
-<p><img src="/images/0310.jpg" width="200" height="200" /></p>
+
+<p>有个不好的习惯声明的指针变量总是忘记  =NULL</p>
+
+<p>Merge k Sorted Lists
+归并</p>
 </div>
 
 
@@ -121,7 +169,7 @@
   
 
 
-<time datetime="2014-03-10T23:24:53+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2014</time>
+<time datetime="2014-06-06T20:28:37+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time>
       
 
 
@@ -136,10 +184,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/09/0309/" title="Previous Post: 0309">&laquo; 0309</a>
+        <a class="basic-alignment left" href="/blog/2014/06/05/ji-xie-wen/" title="Previous Post: 鸡血文">&laquo; 鸡血文</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/03/11/0311/" title="Next Post: 0311">0311 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/06/07/leetcode-atoi/" title="Next Post: leetcode-atoi">leetcode-atoi &raquo;</a>
       
     </p>
   </footer>
