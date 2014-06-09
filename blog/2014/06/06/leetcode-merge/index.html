@@ -9,10 +9,8 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="leetcode里四道与merge有关的题 Merge Sorted Array
-思路：从结尾开始合并，在数组A中从m+n-1
-记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] 习惯养成 Merge Two Sorted Lists
-先用循环写了一遍： &hellip;">
+  <meta name="description" content="leetcode里四道与merge有关的题~ Merge Sorted Array 思路：从结尾开始合并，在数组A中从m+n-1
+记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] 习惯养成 Merge Two Sorted Lists 先用循环写了一遍： &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,14 +91,16 @@
   </header>
 
 
-<div class="entry-content"><p>leetcode里四道与merge有关的题</p>
+<div class="entry-content"><p>leetcode里四道与merge有关的题~</p>
 
-<p>Merge Sorted Array
-思路：从结尾开始合并，在数组A中从m+n-1
+<h2>Merge Sorted Array </h2>
+
+<p>思路：从结尾开始合并，在数组A中从m+n-1
 记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] <strong>习惯养成</strong></p>
 
-<p>Merge Two Sorted Lists
-先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
+<h2>Merge Two Sorted Lists</h2>
+
+<p>先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
 写的很啰嗦，用递归又写了一下</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -135,7 +135,7 @@
 </span><span class='line'>  }
 </span><span class='line'>  else
 </span><span class='line'>  {
-</span><span class='line'>      rHead=l1;
+</span><span class='line'>      rHead=l2;
 </span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1,l2-&gt;next);
 </span><span class='line'>  }
 </span><span class='line'>  
@@ -145,8 +145,72 @@
 
 <p>有个不好的习惯声明的指针变量总是忘记  =NULL</p>
 
-<p>Merge k Sorted Lists
-归并</p>
+<h2>Merge k Sorted Lists</h2>
+
+<p>使用循环不断两两合并</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
+</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
+</span><span class='line'>    int i;
+</span><span class='line'>    ListNode *l=lists[0];
+</span><span class='line'>    for(i=1;i&lt;lists.size();i++)
+</span><span class='line'>    {
+</span><span class='line'>        l=mergeTwoLists(l,lists[i]);
+</span><span class='line'>    }
+</span><span class='line'>    
+</span><span class='line'>    return l;
+</span><span class='line'>    
+</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
+
+
+<p>超时
+不断的两两合并</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
+</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
+</span><span class='line'>    int size=lists.size(),half,i;
+</span><span class='line'>    ListNode *l=lists[0];
+</span><span class='line'>    while(size&gt;1)
+</span><span class='line'>    {
+</span><span class='line'>        half=(size+1)/2;
+</span><span class='line'>        for(i=0;i+half&lt;size;i++)
+</span><span class='line'>        {
+</span><span class='line'>            lists[i]=mergeTwoLists(lists[i],lists[i+half]);
+</span><span class='line'>        }
+</span><span class='line'>        size=half;
+</span><span class='line'>    }
+</span><span class='line'>    return lists[0];
+</span><span class='line'>    
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -187,7 +251,7 @@
         <a class="basic-alignment left" href="/blog/2014/06/05/ji-xie-wen/" title="Previous Post: 鸡血文">&laquo; 鸡血文</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/06/07/leetcode-atoi/" title="Next Post: leetcode-atoi">leetcode-atoi &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/06/07/leetcode-atoi/" title="Next Post: leetcode-atoi&rev words">leetcode-atoi&rev words &raquo;</a>
       
     </p>
   </footer>
@@ -202,7 +266,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/06/07/leetcode-atoi/">Leetcode-atoi</a>
+        <a href="/blog/2014/06/07/leetcode-atoi/">Leetcode-atoi&rev Words</a>
       </li>
     
       <li class="post">

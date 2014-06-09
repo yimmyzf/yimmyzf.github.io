@@ -9,12 +9,12 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="Leetcode String to Integer 注意的几点： * 字符串为空
+  <meta name="description" content="String to Integer 注意的几点： * 字符串为空
 * 全是空格
 * 字符串前的空格要忽略掉
 * 对‘+’和‘-’的处理
 * 遇到非数字的字符就返回当前值而不是返回0
-* int的范围 -2147483648~2147483647 【判断与int最值比较时记得* &hellip;">
+* int的范围 -2147483648~2147483647 【判断与int最值比较时记得*signal】 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -73,7 +73,7 @@
     <article class="post">
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/06/07/leetcode-atoi/">Leetcode-atoi</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/06/07/leetcode-atoi/">Leetcode-atoi&rev Words</a></h1>
     
     
       <p class="meta">
@@ -96,7 +96,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Leetcode String to Integer</p>
+  <div class="entry-content"><h2>String to Integer</h2>
 
 <p>注意的几点：</p>
 
@@ -117,6 +117,117 @@
 * 判断条件中要加入i&lt;len(str)
 * 需要用ord()将字符转换成ASCII码
 </code></pre>
+
+<h2>Reverse words in a string</h2>
+
+<p>第一个想法是，用空格将句子分割，再将单词组合
+第二个想法，之前看过类似的，翻转整个句子，再翻转每个单词（同一个函数）
+一开始按照第二种想法写了一下发现翻转之后的实现方法由于有连续空格与一类似，还多了翻转，索性直接用第一种:(</p>
+
+<p>//注意要剔除收尾空格，将连续空格转为一个空格</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>void reverseWords(string &s) {
+</span><span class='line'>    if(s=="")return;
+</span><span class='line'>    
+</span><span class='line'>    stringstream ss(s);// Insert the string into a stream
+</span><span class='line'>    stack&lt;string&gt; tokens;// hold words
+</span><span class='line'>    string buf;//buffer string
+</span><span class='line'>    s="";
+</span><span class='line'>    while(ss&gt;&gt;buf)
+</span><span class='line'>      tokens.push(buf);
+</span><span class='line'>    
+</span><span class='line'>    while(!tokens.empty())
+</span><span class='line'>    {
+</span><span class='line'>        buf=tokens.top();
+</span><span class='line'>        s=s+buf;
+</span><span class='line'>        if(tokens.size()&gt;1)s=s+' ';
+</span><span class='line'>        tokens.pop();
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>用的数据结构为栈stack，要是用vector注意<strong>push_back(),pop_back(),buf=tokens[tokens.size()-1]</strong>
+  vector没有top方法
+然后用Python做了一下，一条语句就能搞定。。。。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def reverseWords(self, s):
+</span><span class='line'>    return ' '.join(s.split()[::-1])</span></code></pre></td></tr></table></div></figure>
+
+
+<p>顺便小结一下和字符串有关的操作：</p>
+
+<blockquote><p>  去掉两边的空格及指定符号</p>
+
+<pre><code>s.strip()
+s.lstrip()//去掉字符串左边开始的空格
+s.rstrip(',')//去掉字符串右边的连续逗号
+</code></pre>
+
+<p>  #strcpy(s1,s2) 复制</p>
+
+<pre><code>s2=s1
+</code></pre>
+
+<p>  #strcat(s1,s2) 连接</p>
+
+<pre><code>s1+=s2
+</code></pre></blockquote>
+
+<pre><code>连接数组中多个字符串：separator.join(strlist)  其中separator=','  strlist=['apple','pie','cake']
+</code></pre>
+
+<blockquote><p>  查找单个字符</p>
+
+<pre><code>#strchr(s1,c)
+position=s1.index(c)
+</code></pre>
+
+<p>  #strstr(s1,s2)查找字符串</p>
+
+<pre><code>index=s1.find(s2)//返回位置，如没有返回-1
+</code></pre>
+
+<p>  #strcmp</p>
+
+<pre><code>cmp(s1,s2)
+</code></pre>
+
+<p>  #strlen(s)</p>
+
+<pre><code>len(s)
+</code></pre>
+
+<p>  s1=s1.upper()</p>
+
+<pre><code>s2=s2.lower()
+</code></pre>
+
+<p>  #strrev(s) 翻转字符串</p>
+
+<pre><code>s=s[::-1]
+</code></pre>
+
+<p>  s.split(&lsquo;,&rsquo;)</p></blockquote>
 </div>
   
   
@@ -150,14 +261,16 @@
   </header>
 
 
-  <div class="entry-content"><p>leetcode里四道与merge有关的题</p>
+  <div class="entry-content"><p>leetcode里四道与merge有关的题~</p>
 
-<p>Merge Sorted Array
-思路：从结尾开始合并，在数组A中从m+n-1
+<h2>Merge Sorted Array </h2>
+
+<p>思路：从结尾开始合并，在数组A中从m+n-1
 记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] <strong>习惯养成</strong></p>
 
-<p>Merge Two Sorted Lists
-先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
+<h2>Merge Two Sorted Lists</h2>
+
+<p>先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
 写的很啰嗦，用递归又写了一下</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -192,7 +305,7 @@
 </span><span class='line'>  }
 </span><span class='line'>  else
 </span><span class='line'>  {
-</span><span class='line'>      rHead=l1;
+</span><span class='line'>      rHead=l2;
 </span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1,l2-&gt;next);
 </span><span class='line'>  }
 </span><span class='line'>  
@@ -202,8 +315,72 @@
 
 <p>有个不好的习惯声明的指针变量总是忘记  =NULL</p>
 
-<p>Merge k Sorted Lists
-归并</p>
+<h2>Merge k Sorted Lists</h2>
+
+<p>使用循环不断两两合并</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
+</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
+</span><span class='line'>    int i;
+</span><span class='line'>    ListNode *l=lists[0];
+</span><span class='line'>    for(i=1;i&lt;lists.size();i++)
+</span><span class='line'>    {
+</span><span class='line'>        l=mergeTwoLists(l,lists[i]);
+</span><span class='line'>    }
+</span><span class='line'>    
+</span><span class='line'>    return l;
+</span><span class='line'>    
+</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
+
+
+<p>超时
+不断的两两合并</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
+</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
+</span><span class='line'>    int size=lists.size(),half,i;
+</span><span class='line'>    ListNode *l=lists[0];
+</span><span class='line'>    while(size&gt;1)
+</span><span class='line'>    {
+</span><span class='line'>        half=(size+1)/2;
+</span><span class='line'>        for(i=0;i+half&lt;size;i++)
+</span><span class='line'>        {
+</span><span class='line'>            lists[i]=mergeTwoLists(lists[i],lists[i+half]);
+</span><span class='line'>        }
+</span><span class='line'>        size=half;
+</span><span class='line'>    }
+</span><span class='line'>    return lists[0];
+</span><span class='line'>    
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
 </div>
   
   
