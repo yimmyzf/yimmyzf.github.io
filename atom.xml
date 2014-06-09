@@ -4,7 +4,7 @@
   <title><![CDATA[A sentence A picture A day!]]></title>
   <link href="http://yimmyzf.github.io/atom.xml" rel="self"/>
   <link href="http://yimmyzf.github.io/"/>
-  <updated>2014-06-09T19:45:05+08:00</updated>
+  <updated>2014-06-09T19:49:07+08:00</updated>
   <id>http://yimmyzf.github.io/</id>
   <author>
     <name><![CDATA[yimmy]]></name>
@@ -376,6 +376,10 @@ position=s1.index(c)
 <li></li>
 </ol>
 
+
+<h2>代码</h2>
+
+<p>注意&#8220;`  与 &#8220;`第一个之后要换行在写代码，否则在rake generate时会报错in `rescue in pygments&#8217;: Pygments can&rsquo;t parse unknown language: def. (RuntimeError)</p>
 
 <h2>链接</h2>
 
