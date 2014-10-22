@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>机器学习（译文） - A sentence A picture A day!</title>
+  <meta name="author" content="yimmy">
+
+  
+  <meta name="description" content="https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471 世界上最简单的机器学习入门
+当你听有人讨论机器学习时，对其只有个模糊的概念？你不想再用点头的方式与同事交流？让我们开始下面的介绍。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/06/25/ji-qi-xue-xi-%28yi-wen-%29">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">A sentence A picture A day!</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yimmyzf.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">机器学习（译文）</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T12:02:06+08:00" pubdate data-updated="true">Jun 25<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471">https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471</a></p>
+
+<p>世界上最简单的机器学习入门
+当你听有人讨论机器学习时，对其只有个模糊的概念？你不想再用点头的方式与同事交流？让我们开始下面的介绍。</p>
+
+<p>这个指导手册适用于想了解机器学习却又不知如何下手的人，我猜很多人都厌倦了去查阅维基，没有看懂然后就放弃了，其实大家都只是希望能有人能够给出一个简单完整的解释。这也是这个指导手册的作用。</p>
+
+<h3>什么是机器学习？</h3>
+
+<p>机器学习是利用通用算法而无需写任何特定的代码就能够给出一些有意思的结果。无需写代码，将数据传给通用的算法，它们会依据数据建立自身逻辑。
+比如，分类算法是其中一种。它能将数据分成不同的组。同一种分类算法用来识别手写数字无需修改代码就能够用来将垃圾邮件分类出来。
+<img src="https://d262ilb51hltx0.cloudfront.net/max/700/1*YXiclXZdJQVJZ0tQHCv5zw.png" width="200" height="200"   align ="right"/>
+虽然是同一种算法但是输入的训练数据不同，分类的逻辑也不同。
+“机器学习”只是一个总称，它包含了很多通用的算法。</p>
+
+<h3>两种机器学习算法</h3>
+
+<p>我们将机器学习的算法分为两个主要的类别&mdash;&mdash;监督学习和非监督学习。它们区别虽然简单但是非常重要。</p>
+
+<h4>监督学习</h4>
+
+<p>假设你是一个房地产经纪人，业务正在不断发展，你需要雇佣一些新人来帮你，问题是：虽然你能够看一眼房子就可以很好的判断出房子的价值但是你的新学员没有经验不知如何为房子定价。</p>
+
+<p>你决定写一个应用通过房子的大小，周围环境等等因素对其估价。记录下三个月内的每一笔房屋出售&mdash;包括卧室的数目，平方面积，周围环境等。最重要的记录了最后的出售价格：
+<img src="https://d262ilb51hltx0.cloudfront.net/max/820/1*ZWYX9nwsDFaNOW4jOrHDkQ.png" width="200" height="200"   align ="right"/></p>
+
+<p>通过使用训练数据，我们希望生成一个估算其他房屋价值的程序：
+<img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*V0OXzLOPtpU13MVVrlZJjA.png" width="200" height="200"  align ="right"/></p>
+
+<p>这就是监督学习机制。你知道每个房子买了多少价钱，换言之，你知道问题的答案向后找出问题的逻辑。
+将每个房子的数据作为机器学习的输入，算法会找出计算结果的数学方法，就好比是一个，所有的运算符号被擦除了的数学测验，但告诉你了计算结果：
+<img src="https://d262ilb51hltx0.cloudfront.net/max/1010/1*SihYXaJQS3T6tOwqJ6fzPw.png" width="300" height="200" />
+由此，你知道这是什么样的数学问题了吗？你知道自己应该利用左侧的数字以某种方式去得到右侧的数字。
+在<strong>监督学习</strong>方式中，让计算机找出关系，一旦你知道什么方法去解决指定的数据集，你就能够解决相同数据的问题。</p>
+
+<h3>非监督学习</h3>
+
+<p>让我们回过去看一下一开始的例子。如果你不知道每个房子的售价怎么办呢？我们只知道每个房子的大小，位置等，这样我们依然能够做一些有意思的事。这也就是所谓的无监督学习。
+<img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*mUJw2yL4-OBI25xUKS7_Bg.png" width="200" height="200"  align ="right"/>
+这好比就像某个人给了你一个列表的数据，“我也不知道这些数有什么用也许你能发现点什么，祝你好运~”</p>
+
+<p>怎么用这些数据？对于初学者，你将有一个能自动判别数据中不同的场景。可能你会发现在当地大学附近购房者喜欢多卧室的小房间，但是郊区的购房者更倾向于3居室的大面积房屋。了解不同的用户能够帮助导向你的营销策略。</p>
+
+<p>你能够自动的识别出“异常”房子，那些房子可能事一些豪宅，你可以将最好的销售人员委任于那些房子。</p>
+
+<p>我们这篇文章余下的部分主要讨论监督学习机制。无监督机制也很重要，它不是一定需要正确的标签数据。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">yimmy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T12:02:06+08:00" pubdate data-updated="true">Jun 25<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/15/learnpython-exe34/" title="Previous Post: learnPython:EXE34">&laquo; learnPython:EXE34</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/03/hadoop-chu-ji-ji-lu/" title="Next Post: Hadoop 初级记录">Hadoop 初级记录 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/15/r-is-coming/">R Is Coming</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/04/pythonxiao-lu-xiang-guan/">Python效率相关</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/29/pai-lie-zu-he/">排列组合</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/20/github-and-and-svn/">Github&amp;&amp;SVN</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/translation-re-module/">Translation:re Module</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - yimmy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -5,13 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>0312 - A sentence A picture A day!</title>
+  <title>Python效率相关 - A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改 void disploy(const double &amp;r) 常对象 需进行初始化 不能被更新 用于调用常成员函数 A const a(3,4) 开始我的R语言~~
-安装一个包 install. &hellip;">
+  <meta name="description" content="1）字典与列表 python中字典&mdash;hash table；列表&mdash;数组
+对成员的查找访问字典比列表快
+listtmp=[1,2,3,4] dicttmp=dict.fromkeys(listtmp,True) 2)集合与列表 set的交并差操作比list迭代快
+list( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/03/12/0312">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/10/04/pythonxiao-lu-xiang-guan">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -69,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">0312</h1>
+      <h1 class="entry-title">Python效率相关</h1>
     
     
       <p class="meta">
@@ -85,33 +86,82 @@
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-10-04T00:03:13+08:00" pubdate data-updated="true">Oct 4<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改</p>
+<div class="entry-content"><p>1）字典与列表</p>
 
-<blockquote><p>void disploy(const double &amp;r)</p></blockquote>
+<p>python中字典&mdash;hash table；列表&mdash;数组
+对成员的查找访问字典比列表快
+<code>listtmp=[1,2,3,4]</code></p>
 
-<p>常对象 需进行初始化 不能被更新 用于调用常成员函数</p>
+<p><code>dicttmp=dict.fromkeys(listtmp,True)</code></p>
 
-<blockquote><p>A const a(3,4)</p></blockquote>
+<p>2)集合与列表</p>
 
-<p>开始我的R语言~~
-安装一个包</p>
+<p>set的交并差操作比list迭代快
+list(set(lista)&amp;set(list))
+| union
+&amp; intersection
+&ndash; difference</p>
 
-<blockquote><p>install.packages(&ldquo;vcd&rdquo;)//联网~~
-下载的二进制程序包在</p>
+<p>3)python 的条件表达式是lazy evaluation</p>
 
-<pre><code>/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpHE30oP/downloaded_packages里
+<p>if x and y: x为false y的值将不再计算</p>
+
+<p>4）字符串优化：对任何字符串的操作都将产生新的对象</p>
+
+<p>(1)字符串连接尽量使用join()而不是+</p>
+
+<p>避免：</p>
+
+<pre><code>s=""
+for x in list:
+    s+=func(x)
 </code></pre>
 
-<p>help(package=&ldquo;vcd&rdquo;)
-library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquote>
+<p>代替方法：</p>
+
+<pre><code>sliest = [func(elt) for elt in somelist]
+s = "".join(slist)
+</code></pre>
+
+<p>(2)当对字符串可以使用正则表达式或者内置函数来处理的时候，选择内置函数。</p>
+
+<pre><code>str.isalpha()，str.isdigit()，str.startswith(('x', 'yz'))
+</code></pre>
+
+<p>(3)对字符进行格式化比直接串联读取要快，因此要使用</p>
+
+<pre><code>out = "&lt;html&gt;%s%s%s%s&lt;/html&gt;" % (head, prologue, query, tail)
+</code></pre>
+
+<p>而避免</p>
+
+<pre><code>out = "&lt;html&gt;" + head + prologue + query + tail + "&lt;/html&gt;"
+</code></pre>
+
+<p>(4)使用列表解析和生成器表达式</p>
+
+<pre><code>列表解析 a=[w for w in list]【a=(w for w in list)会效率更高】
+</code></pre>
+
+<p>5）交换两个变量的值使用 a,b=b,a 而不是借助中间变量</p>
+
+<p>6）使用局部变量，避免&#8221;global&#8221; 关键字</p>
+
+<p>7）is not 比 !=快</p>
+
+<p>8）在耗时较多的循环中，可以把函数的调用改为内联的方式</p>
+
+<p>9）使用级联比较 &ldquo;x &lt; y &lt; z&rdquo; 而不是 &ldquo;x &lt; y and y &lt; z&rdquo;</p>
+
+<p>参考连接<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-python-optim/">link</a>
+定位程序性能瓶颈以及性能优化工具</p>
 </div>
 
 
@@ -134,7 +184,7 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-10-04T00:03:13+08:00" pubdate data-updated="true">Oct 4<span>th</span>, 2014</time>
       
 
 
@@ -149,10 +199,10 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/11/0311/" title="Previous Post: 0311">&laquo; 0311</a>
+        <a class="basic-alignment left" href="/blog/2014/09/29/pai-lie-zu-he/" title="Previous Post: 排列组合">&laquo; 排列组合</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/03/17/0317/" title="Next Post: 0317">0317 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/10/15/r-is-coming/" title="Next Post: R is coming">R is coming &raquo;</a>
       
     </p>
   </footer>

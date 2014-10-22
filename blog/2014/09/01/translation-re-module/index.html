@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>0312 - A sentence A picture A day!</title>
+  <title>Translation:re Module - A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改 void disploy(const double &amp;r) 常对象 需进行初始化 不能被更新 用于调用常成员函数 A const a(3,4) 开始我的R语言~~
-安装一个包 install. &hellip;">
+  <meta name="description" content="用了一阵的python的re模块，自己总结过几次常用的方法，回头再看官方文档决定&mdash;-翻译一遍！ https://docs.python.org/2/library/re.html regular expression operations 正则表达式相关操作 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/03/12/0312">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/09/01/translation-re-module">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -69,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">0312</h1>
+      <h1 class="entry-title">Translation:re Module</h1>
     
     
       <p class="meta">
@@ -85,33 +83,58 @@
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-09-01T00:22:25+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改</p>
+<div class="entry-content"><p>用了一阵的python的re模块，自己总结过几次常用的方法，回头再看官方文档决定&mdash;-翻译一遍！</p>
 
-<blockquote><p>void disploy(const double &amp;r)</p></blockquote>
+<p><a href="https://docs.python.org/2/library/re.html">https://docs.python.org/2/library/re.html</a></p>
 
-<p>常对象 需进行初始化 不能被更新 用于调用常成员函数</p>
+<p><strong>regular expression operations 正则表达式相关操作</strong></p>
 
-<blockquote><p>A const a(3,4)</p></blockquote>
+<p>这个模块提供了与Perl相似的正则匹配操作。查询的模式与字符串可以是Unicode以及8比特串。</p>
 
-<p>开始我的R语言~~
-安装一个包</p>
+<p>正则表达式使用反斜杠表示特殊字符的一般形式。比如要匹配反斜线\ 表达式为‘&#92;’,其中头尾的为这则表达式所需的格式。</p>
 
-<blockquote><p>install.packages(&ldquo;vcd&rdquo;)//联网~~
-下载的二进制程序包在</p>
+<p>使用Python直接处理原始字符创；若字符串前缀以‘r’开头，反斜线将不被特殊处理。例如 r&#8221;\n&#8221;代表两个元素包含&#8217;\&lsquo;和&#8217;n&rsquo;</p>
 
-<pre><code>/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpHE30oP/downloaded_packages里
+<p><strong>Regular Expression Syntax句法</strong>
+正则表达式是对能匹配的字符串的一种表达方式。</p>
+
+<p>正则表达式包括普通字符与特殊字符。
+特殊字符不仅有普通字符的功能，还具有正则表达式的解释方式。
+特殊字符有：</p>
+
+<p> &lsquo;.&rsquo;</p>
+
+<pre><code>    在默认情况下，它能匹配除新的一行以外的字符。当[DOTALL](https://docs.python.org/2/library/re.html#re.DOTALL)被设置时也可以表示新的一行
 </code></pre>
 
-<p>help(package=&ldquo;vcd&rdquo;)
-library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquote>
+<p> &lsquo;^&rsquo;</p>
+
+<pre><code>    匹配字符串开始&gt;      
+</code></pre>
+
+<p> &lsquo;$&rsquo;</p>
+
+<pre><code>    匹配字符串结束&gt;      
+</code></pre>
+
+<p> &lsquo;*&rsquo;</p>
+
+<pre><code>    匹配0或更多重复的字符，**尽可能的**匹配重复的
+</code></pre>
+
+<p>English Words Record：
+backslash反斜线
+caret 脱字号^
+indicate指示，暗示
+collide 碰撞，冲突
+specify具体说明</p>
 </div>
 
 
@@ -134,7 +157,7 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-09-01T00:22:25+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2014</time>
       
 
 
@@ -149,10 +172,10 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/11/0311/" title="Previous Post: 0311">&laquo; 0311</a>
+        <a class="basic-alignment left" href="/blog/2014/08/20/python-challenge-2/" title="Previous Post: python challenge(2)">&laquo; python challenge(2)</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/03/17/0317/" title="Next Post: 0317">0317 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/09/20/github-and-and-svn/" title="Next Post: Github&amp;&amp;SVN">Github&amp;&amp;SVN &raquo;</a>
       
     </p>
   </footer>

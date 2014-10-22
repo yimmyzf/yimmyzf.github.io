@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>0312 - A sentence A picture A day!</title>
+  <title>Python Challenge(2) - A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改 void disploy(const double &amp;r) 常对象 需进行初始化 不能被更新 用于调用常成员函数 A const a(3,4) 开始我的R语言~~
-安装一个包 install. &hellip;">
+  <meta name="description" content="zipfile模块 用途：python压缩和解压缩 help(zipfile)一下，看该模块的介绍 可以去https://docs.python.org/2/library/zipfile.html去看doc 模块源码http://hg.python.org/cpython/file/2.7/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/03/12/0312">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/08/20/python-challenge-2">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -69,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">0312</h1>
+      <h1 class="entry-title">Python Challenge(2)</h1>
     
     
       <p class="meta">
@@ -85,33 +83,63 @@
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-08-20T23:25:57+08:00" pubdate data-updated="true">Aug 20<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改</p>
+<div class="entry-content"><h3>zipfile模块</h3>
 
-<blockquote><p>void disploy(const double &amp;r)</p></blockquote>
+<p><strong>用途：</strong>python压缩和解压缩</p>
 
-<p>常对象 需进行初始化 不能被更新 用于调用常成员函数</p>
+<p>help(zipfile)一下，看该模块的介绍</p>
 
-<blockquote><p>A const a(3,4)</p></blockquote>
+<p>可以去<a href="https://docs.python.org/2/library/zipfile.html">https://docs.python.org/2/library/zipfile.html</a>去看doc</p>
 
-<p>开始我的R语言~~
-安装一个包</p>
+<p>模块源码<a href="http://hg.python.org/cpython/file/2.7/Lib/zipfile.py">http://hg.python.org/cpython/file/2.7/Lib/zipfile.py</a></p>
 
-<blockquote><p>install.packages(&ldquo;vcd&rdquo;)//联网~~
-下载的二进制程序包在</p>
+<p>主要有以下几个类:<em>ZipFile</em>,<em>PyZipFile</em>,<em>ZipInfo</em>;异常类<em>BadZipFile</em>,<em>LargeZipFile</em></p>
 
-<pre><code>/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpHE30oP/downloaded_packages里
+<p>zipfile里两个重要的类：<em>ZipFile</em>和<em>ZipInefo</em>。一个创建和读取zip文件，一个存储zip文件的每个文件的信息.</p>
+
+<p>class zipfile.ZipFile(file[, mode[, compression[, allowZip64]]])</p>
+
+<pre><code>z=zipfile.zipfile(filename,'r')
+
+for i in z.namelist()---压缩包内文件名
+
+for j in z.infolist()---返回一个zipinfo的列表,一个 zipinfo对象中包含压缩包内一个文件的信息,常用的filename,  file_size,date_time,header_offerset
 </code></pre>
 
-<p>help(package=&ldquo;vcd&rdquo;)
-library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquote>
+<p>ZipFile.infolist()返回一个列表；ZipFile.getinfo(name)返回一个ZipInfo</p>
+
+<p>ZipFile.open(name[, mode[, password]]) 打开压缩文档中名为name的文档</p>
+
+<p>对文件的基本操作 read()、write()、close()</p>
+
+<h3>pickle模块</h3>
+
+<p>在一个文件中储存任何python对象，之后能够将其完整取出&mdash;&mdash;<strong>持久地储存对象。</strong></p>
+
+<p>还有另一个模块称为cPickle，它的功能和pickle模块完全相同，只不过它是用C语言编写的，因此要快得多</p>
+
+<pre><code>obj = {"a": 1, "b": 2, "c": 3} 
+\# 将 obj 持久化保存到文件 tmp.txt 中&gt;    
+pickle.dump(obj, open("tmp.txt", "w"))
+\# do something else ...
+\# 从 tmp.txt 中读取并恢复 obj 对象
+obj2 = pickle.load(open("tmp.txt", "r"))
+print obj2
+</code></pre>
+
+<h4>level5</h4>
+
+<p><code>m=urllib.urlopen('http://www.pythonchallenge.com/pc/def/banner.p').read（）
+p=pickle.load(m)</code></p>
+
+<p>后来把.read()去掉就能看出端倪了~~</p>
 </div>
 
 
@@ -134,7 +162,7 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-08-20T23:25:57+08:00" pubdate data-updated="true">Aug 20<span>th</span>, 2014</time>
       
 
 
@@ -149,10 +177,10 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/11/0311/" title="Previous Post: 0311">&laquo; 0311</a>
+        <a class="basic-alignment left" href="/blog/2014/08/19/python-challenge-1/" title="Previous Post: python challenge(1)">&laquo; python challenge(1)</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/03/17/0317/" title="Next Post: 0317">0317 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/09/01/translation-re-module/" title="Next Post: Translation:re module">Translation:re module &raquo;</a>
       
     </p>
   </footer>

@@ -9,8 +9,9 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="Today I finish a DATA analysis 将300个不同城市的用户搜索行为进行分析，主要关注点为搜索化妆品的时间，将数据打标签将时间提取
-下图为化妆品的搜索时间 ">
+  <meta name="description" content="学习Python中~ 搭建个环境，用Eclipse+pydev插件写Python代码 安装JAVA JDK,
+下载地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html 下载Eclipse:
+http://www. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,7 +72,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/03/09/0309/">0309</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/06/15/eclip-plus-pydev/">Eclip+pydev</a></h1>
     
     
       <p class="meta">
@@ -87,19 +88,43 @@
   
 
 
-<time datetime="2014-03-09T22:47:43+08:00" pubdate data-updated="true">Mar 9<span>th</span>, 2014</time>
+<time datetime="2014-06-15T18:40:35+08:00" pubdate data-updated="true">Jun 15<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h3>Today I finish a DATA analysis</h3>
+  <div class="entry-content"><p>学习Python中~</p>
 
-<p>将300个不同城市的用户搜索行为进行分析，主要关注点为搜索化妆品的时间，将数据打标签将时间提取
-下图为化妆品的搜索时间</p>
+<h4>搭建个环境，用Eclipse+pydev插件写Python代码</h4>
 
-<p><img src="/images/0309.png" width="350" height="200" /></p>
+<p>安装JAVA  JDK,
+下载地址：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+
+<p>下载Eclipse:
+<a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>  ,解压直接使用</p>
+
+<p>在Eclipse中安装pydev插件</p>
+
+<ol>
+<li>启动Eclipse</li>
+<li>help->Install New software</li>
+<li>Add&mdash;>name:Pydev&mdash;>Location:<a href="http://pydev.org/updates">http://pydev.org/updates</a></li>
+</ol>
+
+
+<p>配置pydev解释器</p>
+
+<p>Eclipse&mdash;>Preferences&mdash;>pyDev&mdash;>Python Interpreter&mdash;>Auto Config
+<img src="/images/0615.jpg" width="200" height="200" /></p>
+
+<h4>Coding</h4>
+
+<p>新建PyDevProject项目
+新建 pyDev Package
+试着写代码
+end~~</p>
 </div>
   
   
@@ -112,7 +137,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/01/04/hello-world/">Hello World</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/06/09/suan-fa-zong-jie/">算法总结</a></h1>
     
     
       <p class="meta">
@@ -128,14 +153,794 @@
   
 
 
-<time datetime="2014-01-04T17:07:13+08:00" pubdate data-updated="true">Jan 4<span>th</span>, 2014</time>
+<time datetime="2014-06-09T21:54:17+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>Hello World</h2>
+  <div class="entry-content"><p>不占用额外内存或只占用常数内存得算法：插入排序、选择排序、冒泡排序、快速排序、堆排序
+占用的：归并排序、计数排序？、基数排序、桶排序</p>
+
+<p color:red>当需要对大量数据进行排序时，In-place sort就显示出优点，因为只需要占用常数的内存</p>
+
+
+<p>稳定排序：插入排序、冒泡排序、归并排序、计数排序、基数排序、桶排序
+不稳定：选择排序、快速排序、堆排序</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/07/leetcode-atoi/">Leetcode-atoi&rev Words</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-07T10:37:50+08:00" pubdate data-updated="true">Jun 7<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>String to Integer</h2>
+
+<p>注意的几点：</p>
+
+<pre><code>* 字符串为空
+* 全是空格
+* 字符串前的空格要忽略掉
+* 对‘+’和‘-’的处理
+* 遇到非数字的字符就返回当前值而不是返回0
+* int的范围  -2147483648~2147483647
+</code></pre>
+
+<p>【判断与int最值比较时记得*signal】</p>
+
+<p>又用Python写了一遍，遇到的小问题：</p>
+
+<pre><code>* 空字符串str==''
+* elif
+* 判断条件中要加入i&lt;len(str)
+* 需要用ord()将字符转换成ASCII码
+</code></pre>
+
+<h2>Reverse words in a string</h2>
+
+<p>第一个想法是，用空格将句子分割，再将单词组合
+第二个想法，之前看过类似的，翻转整个句子，再翻转每个单词（同一个函数）
+一开始按照第二种想法写了一下发现翻转之后的实现方法由于有连续空格与一类似，还多了翻转，索性直接用第一种:(</p>
+
+<p>//注意要剔除收尾空格，将连续空格转为一个空格</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>void reverseWords(string &s) {
+</span><span class='line'>    if(s=="")return;
+</span><span class='line'>    
+</span><span class='line'>    stringstream ss(s);// Insert the string into a stream
+</span><span class='line'>    stack&lt;string&gt; tokens;// hold words
+</span><span class='line'>    string buf;//buffer string
+</span><span class='line'>    s="";
+</span><span class='line'>    while(ss&gt;&gt;buf)
+</span><span class='line'>      tokens.push(buf);
+</span><span class='line'>    
+</span><span class='line'>    while(!tokens.empty())
+</span><span class='line'>    {
+</span><span class='line'>        buf=tokens.top();
+</span><span class='line'>        s=s+buf;
+</span><span class='line'>        if(tokens.size()&gt;1)s=s+' ';
+</span><span class='line'>        tokens.pop();
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>用的数据结构为栈stack，要是用vector注意<strong>push_back(),pop_back(),buf=tokens[tokens.size()-1]</strong>
+  vector没有top方法
+然后用Python做了一下，一条语句就能搞定。。。。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def reverseWords(self, s):
+</span><span class='line'>    return ' '.join(s.split()[::-1])</span></code></pre></td></tr></table></div></figure>
+
+
+<p>顺便小结一下和字符串有关的操作：</p>
+
+<blockquote><p>  去掉两边的空格及指定符号</p>
+
+<pre><code>s.strip()
+s.lstrip()//去掉字符串左边开始的空格
+s.rstrip(',')//去掉字符串右边的连续逗号
+</code></pre>
+
+<p>  #strcpy(s1,s2) 复制</p>
+
+<pre><code>s2=s1
+</code></pre>
+
+<p>  #strcat(s1,s2) 连接</p>
+
+<pre><code>s1+=s2
+</code></pre></blockquote>
+
+<pre><code>连接数组中多个字符串：separator.join(strlist)  其中separator=','  strlist=['apple','pie','cake']
+</code></pre>
+
+<blockquote><p>  查找单个字符</p>
+
+<pre><code>#strchr(s1,c)
+position=s1.index(c)
+</code></pre>
+
+<p>  #strstr(s1,s2)查找字符串</p>
+
+<pre><code>index=s1.find(s2)//返回位置，如没有返回-1
+</code></pre>
+
+<p>  #strcmp</p>
+
+<pre><code>cmp(s1,s2)
+</code></pre>
+
+<p>  #strlen(s)</p>
+
+<pre><code>len(s)
+</code></pre>
+
+<p>  s1=s1.upper()</p>
+
+<pre><code>s2=s2.lower()
+</code></pre>
+
+<p>  #strrev(s) 翻转字符串</p>
+
+<pre><code>s=s[::-1]
+</code></pre>
+
+<p>  s.split(&lsquo;,&rsquo;)</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/06/leetcode-merge/">Leetcode-merge</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-06T20:28:37+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>leetcode里四道与merge有关的题~</p>
+
+<h2>Merge Sorted Array </h2>
+
+<p>思路：从结尾开始合并，在数组A中从m+n-1
+记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] <strong>习惯养成</strong></p>
+
+<h2>Merge Two Sorted Lists</h2>
+
+<p>先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
+写的很啰嗦，用递归又写了一下</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
+</span><span class='line'>{
+</span><span class='line'>  if(l1==NULL)return l2;
+</span><span class='line'>  if(l2==NULL)return l1;
+</span><span class='line'>  
+</span><span class='line'>  ListNode *rHead=NULL;
+</span><span class='line'>  if(l1-&gt;val&lt;l2-&gt;val)
+</span><span class='line'>  {
+</span><span class='line'>      rHead=l1;
+</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1-&gt;next,l2);
+</span><span class='line'>  }
+</span><span class='line'>  else
+</span><span class='line'>  {
+</span><span class='line'>      rHead=l2;
+</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1,l2-&gt;next);
+</span><span class='line'>  }
+</span><span class='line'>  
+</span><span class='line'>  return rHead;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>有个不好的习惯声明的指针变量总是忘记  =NULL</p>
+
+<h2>Merge k Sorted Lists</h2>
+
+<p>使用循环不断两两合并</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
+</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
+</span><span class='line'>    int i;
+</span><span class='line'>    ListNode *l=lists[0];
+</span><span class='line'>    for(i=1;i&lt;lists.size();i++)
+</span><span class='line'>    {
+</span><span class='line'>        l=mergeTwoLists(l,lists[i]);
+</span><span class='line'>    }
+</span><span class='line'>    
+</span><span class='line'>    return l;
+</span><span class='line'>    
+</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
+
+
+<p>超时
+不断的两两合并</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
+</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
+</span><span class='line'>    int size=lists.size(),half,i;
+</span><span class='line'>    ListNode *l=lists[0];
+</span><span class='line'>    while(size&gt;1)
+</span><span class='line'>    {
+</span><span class='line'>        half=(size+1)/2;
+</span><span class='line'>        for(i=0;i+half&lt;size;i++)
+</span><span class='line'>        {
+</span><span class='line'>            lists[i]=mergeTwoLists(lists[i],lists[i+half]);
+</span><span class='line'>        }
+</span><span class='line'>        size=half;
+</span><span class='line'>    }
+</span><span class='line'>    return lists[0];
+</span><span class='line'>    
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/05/ji-xie-wen/">鸡血文</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-05T09:20:39+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>  清早，看了一篇文章，让昨天有点down的心情好了很多，将部分文章进行翻译分享一下。
+  文章链接 <a href="http://zenhabits.net/career/">A Guide for Young People: What to Do With Your Life</a></p>
+
+<p>  <strong>学会接受不适</strong></p>
+
+<p>  你能锻炼的最重要的技能之一就是接受不适。最好的事情通常都是困难的，如果你逃避困难和不适，你将错过这些美好的事情。
+  学习、写作、婚姻、马拉松，这些都是不简单的，但是他们都是能给人们打来成就感的。
+  当你发现自己在逃避不适感时，推动自己一下</p>
+
+<p>  <strong>学会接受不确定</strong></p>
+
+<p>  <strong>克服分心与拖延</strong></p>
+
+<p>  你能抓住机会是因为你能够面对不确定性与不适感，但是如果你花时间在社交媒体和看电视上将能难成功。
+  分心与拖延是逃避困难和不适的表现。如果你能很好的接受困难这才是你能有别于其他人。</p>
+
+<p>  <strong>了解你的思维的运作方式</strong></p>
+
+<p>  写博客。你将被迫记录你生活中发生了什么，你学习了什么。这是自我成长的好工具，我推荐给每一给年轻的朋友。</p>
+
+<p>  <strong>小事积累</strong></p>
+
+<p>  从小事做起，如果可能每天都积累，它会随着时间不断增值。</p>
+
+<p>  <strong>变得值得信赖</strong></p>
+
+<p>  每一个任务做到最好，坦率，承认错误改正错误，deadline</p>
+
+<p>  You can start today, and see what life has to offer you.</p>
+
+<hr />
+
+<p>  写这篇文章是因为里面的几个点很触动我：1.迎接不适感与不确定性 2.写博客 3.每一件事情做到最好</p>
+
+<p>  我想这是因为之前的生活顺利，让我这个人缺失了对生活某些方面的理解。这一段的生活在提醒我人不能总生活在舒适区，这样你就是一个生活在脆弱区的人，一旦某天生活面临一个改变，将无所适从。
+  生活之所以有趣有意义，就是因为它能够充满挑战与不确定性，最有意思的地方就是你迎接未知，收获惊喜。我放弃过学习弹琴，放弃过200米，放弃过当一名幼师，放弃过努力选择一个好的lab和intern，曾经的那些非常合理的理由已经没有了意义，如今后悔，所以我知道坚持的意义。</p>
+
+<p>  坚持写博客真的不是容易的事，主要是每天忙到11点多的时候，总是想离开实验室早点休息准备迎接明天，或许是由于生活中自己认为有意义的事太少。change it。</p>
+
+<p>  关于每件事做到最好，是因为最近一个工作中一个简单的报告。再简单，minjun依然能谈到排版，字多图少，以及SQL语句结果中应排查的问题。我觉得哪怕一件再小的事也应该完美点。</p>
+
+<p>  <p style="color:darksalmon">HAVE A NICE DAY！</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/29/markdownxiao-jie/">Markdown小结</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T17:15:32+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>对自己常用的进行一个小结，希望能更好的用它来writing。
+小结了第一版之后发现还是翻译官方文档吧。。。<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">markdown</a>。</p>
+
+<p>网页版<a href="http://markdown-here.com/livedemo.html">markdown</a></p>
+
+<h2>标题</h2>
+
+<blockquote><p>   #H1</p>
+
+<p>   ##H2</p>
+
+<p>   ###H3</p>
+
+<p>   H1  =====</p>
+
+<p>  H2   &mdash;&mdash;&ndash;</p></blockquote>
+
+<h2>强调</h2>
+
+<blockquote><pre><code>斜体 ： *星号* 或者 _下划线_
+加粗：**星号\**   __下划线__
+斜体和加粗: **__**
+划去：~~划去~~
+</code></pre></blockquote>
+
+<h2>区块引用</h2>
+
+<blockquote><p>   使用>在每行的最前面 表示区块
+   使用>>进行嵌套</p></blockquote>
+
+<h2>列表</h2>
+
+<p>无序列表使用 * 或 — 或 +。
+有序列表 数字接英文句点 空格:</p>
+
+<ol>
+<li></li>
+<li></li>
+</ol>
+
+
+<h2>代码</h2>
+
+<p>注意&#8220;`  与 &#8220;`第一个之后要换行在写代码，否则在rake generate时会报错in `rescue in pygments&#8217;: Pygments can&rsquo;t parse unknown language: def. (RuntimeError)</p>
+
+<h2>链接</h2>
+
+<p> [text](url &ldquo;title&rdquo;) title可省
+参考式的[google] 后接[google]:<a href="http://www.google.com/">http://www.google.com/</a>
+参考式的[google][1] 后接[1]:<a href="http://www.google.com/">http://www.google.com/</a></p>
+
+<h2>图片</h2>
+
+<ol>
+<li>![Alt text](/images/img.jpg &ldquo;title&rdquo;)</li>
+<li> 我自己常用的是 &lt;img src=&ldquo;/images/0311.jpg&rdquo; width=&ldquo;200&rdquo; height=&ldquo;200&rdquo; /></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/29/protocol/">Protocol</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T16:40:09+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>[TOC]</p>
+
+<p>回归写作第一篇
+关于协议</p>
+
+<p><strong>层模型</strong>
+因特网协议栈<strong>五层模型</strong>：应用层、传输层、网络层、链路层、物理层</p>
+
+<p>OSI <strong>七层模型</strong>:应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</p>
+
+<p>每一层都有各自的协议</p>
+
+<p><strong>物理层</strong></p>
+
+<p>电脑组网：光纤、电缆、双绞线、无线电波；传输0、1电信号</p>
+
+<p><strong>链路层</strong></p>
+
+<p>以太网Ethernet 一组电信号构成一个“帧”
+Head：18字节
+Data：46~1500字节</p>
+
+<p>MAC地址
+以太网规定，入网的设备必须有“网卡”接口。MAC地址&mdash;网卡的地址，独一无二，12个十六进制数表示
+以太网中数据包的送达：向本网络中所有的计算机发送，让每台计算机自己判断，是否自己是接受者，与自身MAC地址相同就接收不同就丢弃。</p>
+
+<p><strong>网络层</strong></p>
+
+<p>如果两个计算机不在同一个网络，广播无法到达。
+网络是由无数子网络共同组成的。
+需要一种方法判断MAC地址是否同一子网。同一子网时采用广播方式发送，否则路由查询。
+网络层&mdash;-计算机是否属于同一子网络。网络地址由管理员分配。网络地址确定计算机所在的子网络，MAC地址将数据包送到该子网络中得目标网卡。</p>
+
+<p>IP协议
+“子网掩码”&mdash;判断ip地址是否在同一个网络：将两个IP地址分别与子网掩码进行与运算AND，如果结果相同说明在同一子网。</p>
+
+<p>IP数据包
+整个IP数据包总长度最大为65535字节，若数据包大于1500字节，需分割成几个以太网数据包分开发送</p>
+
+<p>ARP协议（得到同一子网的主机MAC地址）
+一般情况是IP地址已知，但对方的MAC地址未知
+从IP地址得到MAC地址：
+&ndash; 两台主机不在同一子网&mdash;&mdash;让网关处理（需要网关的MAC地址，对方的IP地址）</p>
+
+<p>-两台主机在同一子网&mdash;-通过ARP协议得到对方MAC地址：ARP协议：发出一个数据包，含被查询主机的IP地址，对方MAC地址一栏填FF：FF：FF：FF：FF：FF
+ 收到这个包的主机会取出IP地址与自己的比较。</p>
+
+<p> <strong>传输层</strong></p>
+
+<p> 传来的数据包是哪个程序（进程）使用&mdash;-需要“端口”【每一个使用网卡程序的编号】
+ 端口号为0~65535，其中0~1023被系统占用。</p>
+
+<p> 传输层：端口到端口
+ 网络层：主机到主机
+ Unix系统把主机+端口叫“套接字”socket</p>
+
+<p> UDP：简单易实现 可靠性差
+ TCP：有确认机制的UDP</p>
+
+<p> <strong>应用层</strong></p>
+
+<p> 规定数据格式</p>
+
+<p> 上网</p>
+
+<hr />
+
+<p> 静态地址
+ 本机IP、子网掩码、网关IP、DNS的IP
+ 动态地址  DHCP协议【应用层协议，建立在UDP协议上】
+ 每个子网中有一台计算机负责管理本网络中所有IP地址  “DHCP服务器”</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/29/octopresstips/">OctopressTips</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-29T15:17:53+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>很久没用Octopress写作了，原本熟悉的命令记不清:(</p>
+
+<p>回归“像黑客一样写作”的战地</p>
+
+<h4>创建文章</h4>
+
+<p>进入octopress文件夹</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
+</span><span class='line'>rake new_post["My bolg"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>如果执行后遇到“rake aborted! You have already activated rake 10.1.1, but your Gemfile requires rake 0.9.6. Using bundle exec may solve this.”这样的问题，是因为你安装的版本和octopress所用的不符。</code>
+*  你可以按照提示在命令钱直接加bundle exec
+*  如果不想每次都多敲，就更改一下Gemfile的内容吧：我是把 gem &lsquo;rake&rsquo;, &lsquo;~> 0.9&rsquo; 改成了&#8217;10.0&#8217;
+此时进入source目录下的_posts文件夹会生成新建的文章,使用文本编辑器打开进行内容的修改</p>
+
+<p>文章写完后（有中文需要保存成UTF-8格式）</p>
+
+<h4>保存文件生成预览</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>浏览器中输入<a href="http://localhost:4000/">http://localhost:4000/</a>  可查看预览</p>
+
+<p>//创建一个新的页面也与此类似  rake new_page[yummy]</p>
+
+<h4>部署到Github上去</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>一些关于octopress的设置可以修改  _config.yml文件内容</p>
+
+<p>推荐一个编辑的网站 <a href="https://stackedit.io/">https://stackedit.io/</a> 个人很喜欢</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/17/0317/">0317</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-17T23:06:37+08:00" pubdate data-updated="true">Mar 17<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天开始了对HumansofNewYork的整理工作 希望能从中找到自己感兴趣的东西
+总结了15张图片~真是个费时的活儿~不过乐在其中
+<img src="/images/0317.jpg"></p>
+
+<p>整理的最喜欢的一句话是My cab driver and i missed a turn yesterday because we were swapping pictures of our cats</p>
+
+<p>记一句话以让自己踏实：你一直很优秀，只是别让这个世界浮躁了你.自己翻译一下^^:
+You&rsquo;ve always been excellent, but just do not let the world make you fickle.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/12/0312/">0312</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>关于const的小结&mdash;-对const总是用的不好，来个小结
+常引用 不对实参更改</p>
+
+<blockquote><p>void disploy(const double &amp;r)</p></blockquote>
+
+<p>常对象 需进行初始化 不能被更新 用于调用常成员函数</p>
+
+<blockquote><p>A const a(3,4)</p></blockquote>
+
+<p>开始我的R语言~~
+安装一个包</p>
+
+<blockquote><p>install.packages(&ldquo;vcd&rdquo;)//联网~~
+下载的二进制程序包在</p>
+
+<pre><code>/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpHE30oP/downloaded_packages里
+</code></pre>
+
+<p>help(package=&ldquo;vcd&rdquo;)
+library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquote>
 </div>
   
   
@@ -144,6 +949,8 @@
     </article>
   
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -158,23 +965,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/06/07/leetcode-atoi/">Leetcode-atoi&rev Words</a>
+        <a href="/blog/2014/10/15/r-is-coming/">R Is Coming</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/06/leetcode-merge/">Leetcode-merge</a>
+        <a href="/blog/2014/10/04/pythonxiao-lu-xiang-guan/">Python效率相关</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/05/ji-xie-wen/">鸡血文</a>
+        <a href="/blog/2014/09/29/pai-lie-zu-he/">排列组合</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/05/29/markdownxiao-jie/">Markdown小结</a>
+        <a href="/blog/2014/09/20/github-and-and-svn/">Github&amp;&amp;SVN</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/05/29/protocol/">Protocol</a>
+        <a href="/blog/2014/09/01/translation-re-module/">Translation:re Module</a>
       </li>
     
   </ul>
