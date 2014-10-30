@@ -9,7 +9,7 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="加载包 &gt;install.packages("ggplot2") &gt;install.packages("gcookbook") 下载的二进制程序包在/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpBaf4d4/ &hellip;">
+  <meta name="description" content="chapters of Pictures Today begins the chapters of daily picture i finished a simple flag with turtle library in Python the Path in my computer of the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,49 @@
     <article class="post">
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/10/29/chapter1of2014/">Chapter1of2014</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-29T01:03:33+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>chapters of Pictures</h2>
+
+<p>Today begins the chapters of daily picture</p>
+
+<p>i finished a simple flag with turtle library in Python</p>
+
+<p>the Path in my computer of the code:
+/code/python/入门经典/page166.py</p>
+
+<p><img src="/images/0311.jpg" width="200" height="200" /></p>
+</div>
+  
+  
+
+</article>
+
+
+    <article class="post">
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/10/15/r-is-coming/">R Is Coming</a></h1>
     
     
@@ -91,7 +134,14 @@
   </header>
 
 
-  <div class="entry-content"><p>加载包</p>
+  <div class="entry-content"><p>写在前面的话：
+看到了书中关于Winston Chang和动物“驯鹿”的介绍，记录一下^_^。</p>
+
+<p>Winston Chang是一名工程师~~重点是他拥有美国西北大学的心理学博士学位。数据+心理的搭配有点妙。</p>
+
+<p>“驯鹿”学名“角鹿”，他们的视力、皮毛、茸角、嗅觉、蹄子已经全然适应了低温环境。2012年英国伦敦大学学院研究者发现，驯鹿是唯一一种能够看见紫外线的哺乳动物。人类的视觉只能看到波长400nm以上的光线，驯鹿的视觉范围则低于320nm。虽然这一范围仅仅覆盖我们基于黑光帮助下所能看见的所有光谱的一部分，但足以帮驯鹿在北极的炽白光线中看清东西。会飞的驯鹿拉着圣诞老人的雪橇。</p>
+
+<p>加载包</p>
 
 <p><code>&gt;install.packages("ggplot2")</code></p>
 
@@ -122,6 +172,27 @@
 
 <p>[install.package(&ldquo;foreign&rdquo;);library(foreign)]
 read.spss()、read.octave()、read.systat()、read.xport()&hellip;</p>
+
+<p><strong>绘图</strong>：</p>
+
+<p><ol>
+<li>折线图</li>
+<ul>
+<li>
+plot(pressure$temperature, pressure$pressure, type=&ldquo;l&rdquo;)</p>
+
+<p>points(pressure$temperature, pressure$pressure, col=&ldquo;red&rdquo;)
+</li>
+<li>
+qplot(temperature, pressure, data=pressure, geom=c(&ldquo;line&rdquo;, &ldquo;point&rdquo;)
+</li>
+<li>
+ggplot(pressure, aes(x=temperature, y=pressure)) + geom_line() + geom_point()
+</li>
+</ul>
+<li>条形图</li>
+<ul>
+<li></p>
 </div>
   
   
@@ -730,63 +801,6 @@ hadoop.apache.pro/docs/r0.19.1/cn/streaming.html</p>
 <p>你能够自动的识别出“异常”房子，那些房子可能事一些豪宅，你可以将最好的销售人员委任于那些房子。</p>
 
 <p>我们这篇文章余下的部分主要讨论监督学习机制。无监督机制也很重要，它不是一定需要正确的标签数据。</p>
-</div>
-  
-  
-
-</article>
-
-
-    <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/15/learnpython-exe34/">learnPython:EXE34</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-15T22:11:21+08:00" pubdate data-updated="true">Jun 15<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>练习Python和翻译
-网址：<a href="http://learnpythonthehardway.org/book/ex34.html">http://learnpythonthehardway.org/book/ex34.html</a></p>
-
-<p>练习34：获取列表的元素
-如果能够获取列表中的元素，列表是非常有用的。你已经可以顺序的浏览列表中的元素，但是如果你想获取第五个元素呢？你需要知道
-怎么去获取列表中的元素。以下是方法：</p>
-
-<blockquote><p>  animals = [&lsquo;bear&rsquo;, &lsquo;tiger&rsquo;, &lsquo;penguin&rsquo;, &lsquo;zebra&rsquo;]
-  bear = animals[0]</p></blockquote>
-
-<p>列出一组动物，使用0获取第一个？！这是什么原理？数学的方式，Python 列表的序号是从0开始而不是1.看上去有点奇怪，但是
-这样做有很多好处。</p>
-
-<p>最好的解释方式是阐明你使用数字与程序员使用数字的不同。
-想象你看见在列表中的四种动物在赛跑比赛中。它们到达的顺序按照列表中的顺序。比赛很精彩，动物互相间没有吃掉对方并且完成比赛。
-你的朋友迟到了，想知道比赛结果，他不会问“谁第0个到达？”而是会问“谁是第一个？”
-这是因为动物的顺序很重要。你不能够不数第一个就直接数第二个动物，也不能跳过第二个直接数第三个。由于0代表没有，所以没有第0个动物。
-不能表示成“没有”赢得了比赛。这没有意义。我们称这些数为序数，代表事物的顺序。</p>
-
-<p>但是程序员不用这种方式思考，他们能够任何时刻获取列表中的任何元素。对于程序员来说，上面的列表像是一幅纸牌。想要老虎，抓出老虎；想要斑马，拿出斑马。
-为了能够任意取出列表中的元素，需要一个地址或者索引，最好的方式是从0开始使用索引。对于这种方式的访问，数学的方式是相对简单易用。
-使用这种基数能够使你任意获取，所以需要0.</p>
-
-<p>如何使用列表？很简单，当你想获取第三个动物时，将3这个“序数”减1就转化成了“基数”。第三的动物是索引为2的企鹅。虽然你生活中一直使用序数，但是现在必须用基数的方式。只需要“减1”。</p>
 </div>
   
   

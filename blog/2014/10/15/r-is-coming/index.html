@@ -9,7 +9,8 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="加载包 &gt;install.packages("ggplot2") &gt;install.packages("gcookbook") 下载的二进制程序包在/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpBaf4d4/ &hellip;">
+  <meta name="description" content="写在前面的话：
+看到了书中关于Winston Chang和动物“驯鹿”的介绍，记录一下^_^。 Winston Chang是一名工程师~~重点是他拥有美国西北大学的心理学博士学位。数据+心理的搭配有点妙。 “驯鹿”学名“角鹿”，他们的视力、皮毛、茸角、嗅觉、蹄子已经全然适应了低温环境。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,7 +91,14 @@
   </header>
 
 
-<div class="entry-content"><p>加载包</p>
+<div class="entry-content"><p>写在前面的话：
+看到了书中关于Winston Chang和动物“驯鹿”的介绍，记录一下^_^。</p>
+
+<p>Winston Chang是一名工程师~~重点是他拥有美国西北大学的心理学博士学位。数据+心理的搭配有点妙。</p>
+
+<p>“驯鹿”学名“角鹿”，他们的视力、皮毛、茸角、嗅觉、蹄子已经全然适应了低温环境。2012年英国伦敦大学学院研究者发现，驯鹿是唯一一种能够看见紫外线的哺乳动物。人类的视觉只能看到波长400nm以上的光线，驯鹿的视觉范围则低于320nm。虽然这一范围仅仅覆盖我们基于黑光帮助下所能看见的所有光谱的一部分，但足以帮驯鹿在北极的炽白光线中看清东西。会飞的驯鹿拉着圣诞老人的雪橇。</p>
+
+<p>加载包</p>
 
 <p><code>&gt;install.packages("ggplot2")</code></p>
 
@@ -121,6 +129,27 @@
 
 <p>[install.package(&ldquo;foreign&rdquo;);library(foreign)]
 read.spss()、read.octave()、read.systat()、read.xport()&hellip;</p>
+
+<p><strong>绘图</strong>：</p>
+
+<p><ol>
+<li>折线图</li>
+<ul>
+<li>
+plot(pressure$temperature, pressure$pressure, type=&ldquo;l&rdquo;)</p>
+
+<p>points(pressure$temperature, pressure$pressure, col=&ldquo;red&rdquo;)
+</li>
+<li>
+qplot(temperature, pressure, data=pressure, geom=c(&ldquo;line&rdquo;, &ldquo;point&rdquo;)
+</li>
+<li>
+ggplot(pressure, aes(x=temperature, y=pressure)) + geom_line() + geom_point()
+</li>
+</ul>
+<li>条形图</li>
+<ul>
+<li></p>
 </div>
 
 
@@ -161,6 +190,8 @@ read.spss()、read.octave()、read.systat()、read.xport()&hellip;</p>
         <a class="basic-alignment left" href="/blog/2014/10/04/pythonxiao-lu-xiang-guan/" title="Previous Post: python效率相关">&laquo; python效率相关</a>
       
       
+        <a class="basic-alignment right" href="/blog/2014/10/29/chapter1of2014/" title="Next Post: chapter1of2014">chapter1of2014 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -172,6 +203,10 @@ read.spss()、read.octave()、read.systat()、read.xport()&hellip;</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/29/chapter1of2014/">Chapter1of2014</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/10/15/r-is-coming/">R Is Coming</a>
@@ -187,10 +222,6 @@ read.spss()、read.octave()、read.systat()、read.xport()&hellip;</p>
     
       <li class="post">
         <a href="/blog/2014/09/20/github-and-and-svn/">Github&amp;&amp;SVN</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/01/translation-re-module/">Translation:re Module</a>
       </li>
     
   </ul>

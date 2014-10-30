@@ -4,7 +4,7 @@
   <title><![CDATA[A sentence A picture A day!]]></title>
   <link href="http://yimmyzf.github.io/atom.xml" rel="self"/>
   <link href="http://yimmyzf.github.io/"/>
-  <updated>2014-10-23T00:34:48+08:00</updated>
+  <updated>2014-10-29T10:16:39+08:00</updated>
   <id>http://yimmyzf.github.io/</id>
   <author>
     <name><![CDATA[yimmy]]></name>
@@ -14,11 +14,36 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Chapter1of2014]]></title>
+    <link href="http://yimmyzf.github.io/blog/2014/10/29/chapter1of2014/"/>
+    <updated>2014-10-29T01:03:33+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2014/10/29/chapter1of2014</id>
+    <content type="html"><![CDATA[<h2>chapters of Pictures</h2>
+
+<p>Today begins the chapters of daily picture</p>
+
+<p>i finished a simple flag with turtle library in Python</p>
+
+<p>the Path in my computer of the code:
+/code/python/入门经典/page166.py</p>
+
+<p><img src="http://yimmyzf.github.io/images/0311.jpg" width="200" height="200" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[R Is Coming]]></title>
     <link href="http://yimmyzf.github.io/blog/2014/10/15/r-is-coming/"/>
     <updated>2014-10-15T12:51:47+08:00</updated>
     <id>http://yimmyzf.github.io/blog/2014/10/15/r-is-coming</id>
-    <content type="html"><![CDATA[<p>加载包</p>
+    <content type="html"><![CDATA[<p>写在前面的话：
+看到了书中关于Winston Chang和动物“驯鹿”的介绍，记录一下^_^。</p>
+
+<p>Winston Chang是一名工程师~~重点是他拥有美国西北大学的心理学博士学位。数据+心理的搭配有点妙。</p>
+
+<p>“驯鹿”学名“角鹿”，他们的视力、皮毛、茸角、嗅觉、蹄子已经全然适应了低温环境。2012年英国伦敦大学学院研究者发现，驯鹿是唯一一种能够看见紫外线的哺乳动物。人类的视觉只能看到波长400nm以上的光线，驯鹿的视觉范围则低于320nm。虽然这一范围仅仅覆盖我们基于黑光帮助下所能看见的所有光谱的一部分，但足以帮驯鹿在北极的炽白光线中看清东西。会飞的驯鹿拉着圣诞老人的雪橇。</p>
+
+<p>加载包</p>
 
 <p><code>&gt;install.packages("ggplot2")</code></p>
 
@@ -49,6 +74,27 @@
 
 <p>[install.package(&ldquo;foreign&rdquo;);library(foreign)]
 read.spss()、read.octave()、read.systat()、read.xport()&hellip;</p>
+
+<p><strong>绘图</strong>：</p>
+
+<p><ol>
+<li>折线图</li>
+<ul>
+<li>
+plot(pressure$temperature, pressure$pressure, type=&ldquo;l&rdquo;)</p>
+
+<p>points(pressure$temperature, pressure$pressure, col=&ldquo;red&rdquo;)
+</li>
+<li>
+qplot(temperature, pressure, data=pressure, geom=c(&ldquo;line&rdquo;, &ldquo;point&rdquo;)
+</li>
+<li>
+ggplot(pressure, aes(x=temperature, y=pressure)) + geom_line() + geom_point()
+</li>
+</ul>
+<li>条形图</li>
+<ul>
+<li></p>
 ]]></content>
   </entry>
   
@@ -1072,34 +1118,6 @@ Data：46~1500字节</p>
 
 <p>记一句话以让自己踏实：你一直很优秀，只是别让这个世界浮躁了你.自己翻译一下^^:
 You&rsquo;ve always been excellent, but just do not let the world make you fickle.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[0312]]></title>
-    <link href="http://yimmyzf.github.io/blog/2014/03/12/0312/"/>
-    <updated>2014-03-12T23:21:50+08:00</updated>
-    <id>http://yimmyzf.github.io/blog/2014/03/12/0312</id>
-    <content type="html"><![CDATA[<p>关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改</p>
-
-<blockquote><p>void disploy(const double &amp;r)</p></blockquote>
-
-<p>常对象 需进行初始化 不能被更新 用于调用常成员函数</p>
-
-<blockquote><p>A const a(3,4)</p></blockquote>
-
-<p>开始我的R语言~~
-安装一个包</p>
-
-<blockquote><p>install.packages(&ldquo;vcd&rdquo;)//联网~~
-下载的二进制程序包在</p>
-
-<pre><code>/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpHE30oP/downloaded_packages里
-</code></pre>
-
-<p>help(package=&ldquo;vcd&rdquo;)
-library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquote>
 ]]></content>
   </entry>
   
