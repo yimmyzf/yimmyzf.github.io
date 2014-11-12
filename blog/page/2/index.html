@@ -9,10 +9,13 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="练习Python和翻译
-网址：http://learnpythonthehardway.org/book/ex34.html 练习34：获取列表的元素
-如果能够获取列表中的元素，列表是非常有用的。你已经可以顺序的浏览列表中的元素，但是如果你想获取第五个元素呢？你需要知道
-怎么去获取列表中的元素。 &hellip;">
+  <meta name="description" content="Hadoop
+这周用了hadoop，主要是Hadoop Streaming相关，不涉及框架与原理，主要将用过的作小结与记录，以后不断补充
+Part I 用户脚本命令
+常规选项
+-conf 指定应用程序配置文件
+-D 为指定属性指定值value
+-archives &lt;用逗号分隔列表> &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +70,183 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/03/hadoop-chu-ji-ji-lu/">Hadoop 初级记录</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-03T12:10:30+08:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Hadoop
+这周用了hadoop，主要是Hadoop Streaming相关，不涉及框架与原理，主要将用过的作小结与记录，以后不断补充
+Part I 用户脚本命令
+常规选项
+-conf <config file>        指定应用程序配置文件
+-D                          为指定属性指定值value
+-archives &lt;用逗号分隔列表>       指定要被解压到计算节点的列表
+用户命令
+hadoop archive
+hadoop fs
+hadoop job
+hadoop jar 运行jar文件</p>
+
+<p>FS shell
+用于client和HDFS进行数据交互
+调用方式：  $HADOOP_HOME/bin/hadoop fs &hellip;
+FS shell命令使用URI路径作为参数。URI格式：scheme://path。
+scheme分为hdfs（对HDFS文件系统）和file（本地文件系统）
+命令的错误信息会输出到stderr，其他信息输出到stdout
+<strong>get</strong>
+hadoop fs -get [-ignorecrc]/[-crc] /hadoop/file localfile
+hadoop fs -get [-ignorecrc]/[-crc] hdfs://host:port/hadoop/file localfile
+复制文件到本地</p>
+
+<p><strong>getmerge</strong>
+hadoop fs -getmerge mergedir localfile
+源目录中所有文件连接成本地目标文件</p>
+
+<p><strong>ls</strong>
+hadoop fs -ls ..
+返回文件信息或者子文件列表</p>
+
+<p><strong>mkdir</strong>
+hadoop fs -mkdir <paths>
+建目录</p>
+
+<p><strong>put</strong></p>
+
+<p><strong>rm</strong></p>
+
+<p><strong>rmr</strong></p>
+
+<p><strong>stat</strong></p>
+
+<p><strong>tail</strong></p>
+
+<p><strong>test</strong></p>
+
+<p><strong>text</strong></p>
+
+<p>Map-Reduce
+Mapper</p>
+
+<p>Reducer</p>
+
+<p>在我使用hadoop的过程中主要就是写mapper和reducer文件
+标准输入
+mapper输出文件由key值 \t value值组成 sort后为reducer输入 而reducer的输入不拘泥于key-value，可以是任意形式</p>
+
+<p>Streaming
+hadoop.apache.pro/docs/r0.19.1/cn/streaming.html</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/25/ji-qi-xue-xi-%28yi-wen-%29/">机器学习（译文）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T12:02:06+08:00" pubdate data-updated="true">Jun 25<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471">https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471</a></p>
+
+<p>世界上最简单的机器学习入门
+当你听有人讨论机器学习时，对其只有个模糊的概念？你不想再用点头的方式与同事交流？让我们开始下面的介绍。</p>
+
+<p>这个指导手册适用于想了解机器学习却又不知如何下手的人，我猜很多人都厌倦了去查阅维基，没有看懂然后就放弃了，其实大家都只是希望能有人能够给出一个简单完整的解释。这也是这个指导手册的作用。</p>
+
+<h3>什么是机器学习？</h3>
+
+<p>机器学习是利用通用算法而无需写任何特定的代码就能够给出一些有意思的结果。无需写代码，将数据传给通用的算法，它们会依据数据建立自身逻辑。
+比如，分类算法是其中一种。它能将数据分成不同的组。同一种分类算法用来识别手写数字无需修改代码就能够用来将垃圾邮件分类出来。
+<img src="https://d262ilb51hltx0.cloudfront.net/max/700/1*YXiclXZdJQVJZ0tQHCv5zw.png" width="200" height="200"   align ="right"/>
+虽然是同一种算法但是输入的训练数据不同，分类的逻辑也不同。
+“机器学习”只是一个总称，它包含了很多通用的算法。</p>
+
+<h3>两种机器学习算法</h3>
+
+<p>我们将机器学习的算法分为两个主要的类别&mdash;&mdash;监督学习和非监督学习。它们区别虽然简单但是非常重要。</p>
+
+<h4>监督学习</h4>
+
+<p>假设你是一个房地产经纪人，业务正在不断发展，你需要雇佣一些新人来帮你，问题是：虽然你能够看一眼房子就可以很好的判断出房子的价值但是你的新学员没有经验不知如何为房子定价。</p>
+
+<p>你决定写一个应用通过房子的大小，周围环境等等因素对其估价。记录下三个月内的每一笔房屋出售&mdash;包括卧室的数目，平方面积，周围环境等。最重要的记录了最后的出售价格：
+<img src="https://d262ilb51hltx0.cloudfront.net/max/820/1*ZWYX9nwsDFaNOW4jOrHDkQ.png" width="200" height="200"   align ="right"/></p>
+
+<p>通过使用训练数据，我们希望生成一个估算其他房屋价值的程序：
+<img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*V0OXzLOPtpU13MVVrlZJjA.png" width="200" height="200"  align ="right"/></p>
+
+<p>这就是监督学习机制。你知道每个房子买了多少价钱，换言之，你知道问题的答案向后找出问题的逻辑。
+将每个房子的数据作为机器学习的输入，算法会找出计算结果的数学方法，就好比是一个，所有的运算符号被擦除了的数学测验，但告诉你了计算结果：
+<img src="https://d262ilb51hltx0.cloudfront.net/max/1010/1*SihYXaJQS3T6tOwqJ6fzPw.png" width="300" height="200" />
+由此，你知道这是什么样的数学问题了吗？你知道自己应该利用左侧的数字以某种方式去得到右侧的数字。
+在<strong>监督学习</strong>方式中，让计算机找出关系，一旦你知道什么方法去解决指定的数据集，你就能够解决相同数据的问题。</p>
+
+<h3>非监督学习</h3>
+
+<p>让我们回过去看一下一开始的例子。如果你不知道每个房子的售价怎么办呢？我们只知道每个房子的大小，位置等，这样我们依然能够做一些有意思的事。这也就是所谓的无监督学习。
+<img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*mUJw2yL4-OBI25xUKS7_Bg.png" width="200" height="200"  align ="right"/>
+这好比就像某个人给了你一个列表的数据，“我也不知道这些数有什么用也许你能发现点什么，祝你好运~”</p>
+
+<p>怎么用这些数据？对于初学者，你将有一个能自动判别数据中不同的场景。可能你会发现在当地大学附近购房者喜欢多卧室的小房间，但是郊区的购房者更倾向于3居室的大面积房屋。了解不同的用户能够帮助导向你的营销策略。</p>
+
+<p>你能够自动的识别出“异常”房子，那些房子可能事一些豪宅，你可以将最好的销售人员委任于那些房子。</p>
+
+<p>我们这篇文章余下的部分主要讨论监督学习机制。无监督机制也很重要，它不是一定需要正确的标签数据。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -833,126 +1013,6 @@ Data：46~1500字节</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/29/octopresstips/">OctopressTips</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-29T15:17:53+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>很久没用Octopress写作了，原本熟悉的命令记不清:(</p>
-
-<p>回归“像黑客一样写作”的战地</p>
-
-<h4>创建文章</h4>
-
-<p>进入octopress文件夹</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd octopress
-</span><span class='line'>rake new_post["My bolg"]</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>如果执行后遇到“rake aborted! You have already activated rake 10.1.1, but your Gemfile requires rake 0.9.6. Using bundle exec may solve this.”这样的问题，是因为你安装的版本和octopress所用的不符。</code>
-*  你可以按照提示在命令钱直接加bundle exec
-*  如果不想每次都多敲，就更改一下Gemfile的内容吧：我是把 gem &lsquo;rake&rsquo;, &lsquo;~> 0.9&rsquo; 改成了&#8217;10.0&#8217;
-此时进入source目录下的_posts文件夹会生成新建的文章,使用文本编辑器打开进行内容的修改</p>
-
-<p>文章写完后（有中文需要保存成UTF-8格式）</p>
-
-<h4>保存文件生成预览</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
-</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<p>浏览器中输入<a href="http://localhost:4000/">http://localhost:4000/</a>  可查看预览</p>
-
-<p>//创建一个新的页面也与此类似  rake new_page[yummy]</p>
-
-<h4>部署到Github上去</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>一些关于octopress的设置可以修改  _config.yml文件内容</p>
-
-<p>推荐一个编辑的网站 <a href="https://stackedit.io/">https://stackedit.io/</a> 个人很喜欢</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/17/0317/">0317</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-17T23:06:37+08:00" pubdate data-updated="true">Mar 17<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天开始了对HumansofNewYork的整理工作 希望能从中找到自己感兴趣的东西
-总结了15张图片~真是个费时的活儿~不过乐在其中
-<img src="/images/0317.jpg"></p>
-
-<p>整理的最喜欢的一句话是My cab driver and i missed a turn yesterday because we were swapping pictures of our cats</p>
-
-<p>记一句话以让自己踏实：你一直很优秀，只是别让这个世界浮躁了你.自己翻译一下^^:
-You&rsquo;ve always been excellent, but just do not let the world make you fickle.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -970,6 +1030,14 @@ You&rsquo;ve always been excellent, but just do not let the world make you fickl
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/11/08/python-wei-dao-2/">Python 味道[2]</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/06/python-hen-mei-1/">Python 味道[1]</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/29/chapter1of2014/">Chapter1of2014</a>
       </li>
     
@@ -979,14 +1047,6 @@ You&rsquo;ve always been excellent, but just do not let the world make you fickl
     
       <li class="post">
         <a href="/blog/2014/10/04/pythonxiao-lu-xiang-guan/">Python效率相关</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/29/pai-lie-zu-he/">排列组合</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/20/github-and-and-svn/">Github&amp;&amp;SVN</a>
       </li>
     
   </ul>

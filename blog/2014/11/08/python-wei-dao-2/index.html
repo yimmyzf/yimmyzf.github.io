@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Python 味道[2] - A sentence A picture A day!</title>
+  <meta name="author" content="yimmy">
+
+  
+  <meta name="description" content="利用assert语句来发现问题 assert expression1 [",",expression2] 依据expression1会返回True或者False，值为False时引发AssertionError，expression2可选，用于传递具体的异常信息 注意： python不像C/C &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/11/08/python-wei-dao-2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">A sentence A picture A day!</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yimmyzf.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Python 味道[2]</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-08T21:28:19+08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h4>利用assert语句来发现问题</h4>
+
+<pre><code>assert expression1 [",",expression2]
+</code></pre>
+
+<p>依据expression1会返回True或者False，值为False时引发AssertionError，expression2可选，用于传递具体的异常信息</p>
+
+<p>注意：</p>
+
+<ul>
+<li>python不像C/C++，没有严格定义调试和发布模式。禁用断言：在运行脚本是加上<strong>-O</strong>标志</li>
+<li>python本身的异常能够处理就不要再使用断言【比如数组越界、类型不匹配、除数为0】</li>
+<li>不用断言检查用户输入。较好的做法是使用条件判断，不符合输出错误提示信息</li>
+<li>在函数调用后，当需要确认返回值是否合理时可以使用断言。</li>
+<li>当条件是业务逻辑继续下去的先决条件时可以使用断言。</li>
+</ul>
+
+
+<h4>数据交换值时不推荐使用中间变量</h4>
+
+<p>在python中直接用</p>
+
+<pre><code>&gt;&gt;&gt; x,y = y,x
+</code></pre>
+
+<h4>充分利用Lazy evaluation</h4>
+
+<p>Lazy evaluation仅仅在真正需要执行的时候才计算表达式的值</p>
+
+<ul>
+<li>避免不必要计算。在if x and y，x为false情况下将不再计算y；if x or y，x为true不再计算y。<em>因此对于or应将真值可能性高的变量写在前。</em></li>
+<li><p>节省空间，使无限循环成为可能。典型的使用延迟计算的例子是生成器表达式，尽在每次需要计算的时候才通过yield产生元素。</p>
+
+<pre><code>def fib():
+    a,b=0,1
+    while True:
+        yield a
+        a,b=b,a+b
+
+print list(islice(fib(),5))
+</code></pre></li>
+</ul>
+
+
+<h4>尽量转换为浮点类型再做除法</h4>
+
+<p>当涉及除法运算时尽量将操作数转换为浮点类型在做运算</p>
+
+<pre><code>&gt;&gt;&gt;g=float((4*96+3*85))/float(((4+3+2)*100))
+</code></pre>
+
+<p>对于浮点数的处理，其计算结果可能并不是完全准确的。对于在while中使用i!=1.5更要避免，浮点数的比较最好能够指明精度</p>
+
+<h4>晶体eval()的安全漏洞</h4>
+
+<p>Python中eval()函数将字符串str当成有效的表达式来求值并返回计算结果</p>
+
+<pre><code>函数声明 eval(expression[,global[,local]])
+</code></pre>
+
+<p>&ldquo;eval is evil&#8221;针对的是eval()的安全性，当用户输入了不安全的字符串将造成不良后果。如果使用对象不是信任源，应尽量避免使用eval，可用安全性更好的ast.literal_eval替代【木有试过:P】</p>
+
+<h4>使用enumerate()获取序列迭代的索引和值</h4>
+
+<pre><code>list1=['a','b','c']
+for i,e in enumerate(list1):
+    print "index:",i,"element:",e
+</code></pre>
+
+<p>函数enumerate()主要为了解决在循环中获取索引以及对应值问题</p>
+
+<pre><code>enumerate(sequence,start=0)
+</code></pre>
+
+<p>sequence可以为序列，list、set等，函数的返回本质上是一个迭代器，可用next()方法获取下一个迭代元素</p>
+
+<pre><code>&gt;&gt;&gt;e=enumerate(list1)
+&gt;&gt;&gt;e.next()
+</code></pre>
+
+<p>enumerate()函数实现</p>
+
+<pre><code>def enumerate(sequence,start=0):
+    n=start
+    for elem in sequence:
+        yield n,elem
+        n+=1
+</code></pre>
+
+<p>plus，要获取迭代过程中字典的key和value，应使用iteritems()方法</p>
+
+<pre><code>infodict=['name':'reindeer','age':'25']
+for k,v in infodict.iteritems():
+    print k,":",v
+</code></pre>
+
+<h4>is与==的适用场景</h4>
+
+<table width=400 border=1 cellspacing=1 cellpadding=3> <tr> <td>操作符</td> <td>意义</td> </tr>
+<tr> <td>is</td> <td>object identity 对象是否一致 同一块内存空间</td> </tr>
+<tr> <td>==</td> <td>equal 检验对象值是否相等</td> </tr>
+</table>
+
+
+<h4>编码编码呀，尽可能使用Unicode</h4>
+
+<p>关于文件的编码问题深有感触呀~~</p>
+
+<p>Python内建的字符串两种类型：str和Unicode，公共祖先basestring。</p>
+
+<p>最早的ASCII编码用一个字节8bit。我国表示汉字编码GBK。
+》》》Problem：不同编码系统之间存在冲突
+》》》solve：为不同的文字分配同一编码</p>
+
+<p>Unicode编码系统可分为编码方式和实现方式两个层次。编码方式分为UCS-2(两个字节)和UCS-4(四个字节)。实现方式简称UTF包括UTF-7、UTF-16、UTF-32、UTF-8等</p>
+
+<table width=500 border=1>
+<tr><td>Unicode编码（十六进制）</td> <td>UTF-8字节流（二进制）</td></tr>
+<tr><td>000000~00007F</td> <td>0xxxxxxx</td></tr>
+<tr><td>000080~0007FF</td> <td>110xxxxx 10xxxxxx</td></tr>
+<tr><td>000800~00FFFF</td> <td>1110xxxx 10xxxxxx 10xxxxxx</td></tr>
+<tr><td>010000~10FFFF</td> <td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td></tr>
+</table>
+
+
+<p><strong>Python处理中文字符常遇见的问题</strong></p>
+
+<ul>
+<li>读出文件内容为乱码</li>
+<li>当Python源文件中包含中文字符时抛出SyntaxError异常【Non-ASCII charater &lsquo;\xxx&rsquo; in……】</li>
+<li><p>普通字符和Unicode进行字符串连接时抛出UnicodeDecodeError异常</p>
+
+<pre><code>#coding=utf-8
+s = "中文"+ u"Chinese"
+print s
+</code></pre>
+
+<p>抛出异常UnicodeDecodeError:&lsquo;ascii&rsquo; codec can&rsquo;t decode byte 0xd6 in position 0:ordinal not in range(128)</p></li>
+</ul>
+
+
+<p>对应上述问题：</p>
+
+<ul>
+<li><p>读入的文件是用UTF-8编码形式保存的【Windows本地默认编码是CP936，被映射为GBK】，当在控制台上直接显示UTF-8时，两种编码不兼容。要解决一的问题可以使用Unicode作为中间媒介来完成转换。首先对读入的字符用UTF-8进行解码，再用GBK进行编码</p>
+
+<pre><code>&gt;&gt;&gt;fhandle = open("t.txt",'r')
+&gt;&gt;&gt;print (fhandle.read().decode("utf-8")).encode("gbk"))（1）
+&gt;&gt;&gt;fhandle.close()
+</code></pre>
+
+<p>decode方法将其他编码对应的字符串解码成Unicode，encode为编码</p>
+
+<pre><code>str.decode([编码参数[,错误处理]])
+str.encode([编码参数[,错误处理]])
+</code></pre>
+
+<p>编码参数
+<table width=200 border=1>
+<tr><td>编码参数</td> </tr>
+<tr><td>&lsquo;ascii&rsquo;</td> </tr>
+<tr><td>&lsquo;latin-1&rsquo; or &lsquo;iso-8859-1&rsquo;</td> </tr>
+<tr><td>utf-8</td></tr>
+<tr><td>utf-16</td> </tr>
+</table>
+错误处理参数三种方式
+<table width=400 border=1>
+<tr><td>错误处理参数</td> <td>处理方式</td></tr>
+<tr><td>strict</td> <td>默认处理方式，抛出UnicodeError异常</td></tr>
+<tr><td>ignore</td> <td>忽略不可转换字符</td></tr>
+<tr><td>replace</td> <td>将不可转换的字符用？代替</td></tr>
+</table></p>
+
+<p>plus，某些情况下 （1）会出现如下异常 UnicodeDecodeError:&lsquo;gbk&rsquo; codec can&rsquo;t encode charcter u&#8217;\uxxxx&#8217; in position0:illegal multibyte sequence&mdash;&mdash;某些软件在保存UTF-8编码时在文件最开始的地方插入不可见字符BOM（0xEF 0xBB 0xBF）这些不可见字符无法被正确解析&mdash;&ndash;<strong>利用codecs模块可以处理这种问题</strong></p>
+
+<pre><code>import codesc
+content = open（"t.txt",'r'）.read()
+if content[:3] == codecs.BOM_UTF*
+content = content[3:]
+</code></pre>
+
+<p>我记得貌似有直接用codecs打开文件的方式，用codecs提供的open方法来指定打开的文件的语言编码<code>bfile  =  codecs.open("dddd.txt",'r',"UTF-8" )</code></p></li>
+<li><p>对于问题二：Pyhton中默认的编码为ASCII（sys.getdefaultencoding()），文件**.py是以ASCII形式保存的。中文字符不是ASCII，源文件中未指定其他编码方式。因此，要在源文件中进行编码声明</p>
+
+<pre><code>#codnig=utf-8
+or
+#!/usr/bin/python
+#!-*- coding: utf-8 -*-
+or
+#!/usr/bin/python
+# vim:set fileencoding=utf-8 :
+</code></pre></li>
+<li><p>对于问题三：+左边为中文，类型为str，右边为Unicode字符串。连接时，Python将左边的中文转为Unicode再与右边的Unicode连接，将str转为Unicode事使用系统默认的ASCII进行解码，当编码值大于128时，不能正确处理。解决办法：
+1）指定str转为Unicode时的编码方式<code>s = "中文".decode('gbk')+u"Chinese"</code>;2)将Unicode字符串进行UTF-8编码 `s = &ldquo;中文&rdquo;+u&#8221;Chinese&#8221;.encode(&ldquo;utf-8&rdquo;)</p></li>
+</ul>
+
+
+<p>Unicode提供了不同编码系统之间字符转换的桥梁，要弄清字符所采取的编码方式以及正确的解码方法。对于中文字符，建议直接使用Unicode表式方式<code>s = u"hao可爱的小鹿"</code>。pyhton2.6后可通过import unicode_literals自动将定义的普通字符识别为Unicode字符串</p>
+
+<h4>构建合理的报层次来管理module</h4>
+
+<p>本质上每一个Python文件都是一个模块。但是将所有Python文件放在一个目录下并不好，需要合理组织项目的层次来管理模块&mdash;包（package）
+  包，类似目录，包除了常规的Python文件（模块）以外，还包含<strong>init</strong>.py文件，同时它允许嵌套，包结构如下：</p>
+
+<pre><code>Package/ __init__.py
+    Modu1.py
+    Modu2.py
+    Subpackage/ __init__.py
+        Modu1.py
+        Modu2.py
+</code></pre>
+
+<p>  包中模块通过“.”访问。例如Package.Modu1;Package.Subpackage.Modu2。
+导入方法：</p>
+
+<ul>
+<li><p>直接导入一个包</p>
+
+<pre><code>import Package
+</code></pre></li>
+<li><p>导入子模块或子包</p>
+
+<pre><code>from Package import Modu1
+or
+import Package.Modu1
+
+from Package import Subpackage
+or
+import Package.Subpackage
+
+from Package.Subpackage import Modu1
+or
+import Package.Subpackage.Modu1
+</code></pre></li>
+</ul>
+
+
+<p><em>__init__.py</em>文件的作用&mdash;1）与普通目录的区分；2）申明模块级别的import语句从而使其变成包级别可见。</p>
+
+<p>在__init__.py文件中添加from Modu1 import Test【Test为Package下Modu1中得类】可直接导入类Test。如果__init__.py文件为空，当想使用from Package import * 导入所有模块时将不能生效。</p>
+
+<p>__init__.py另一个作用通过定义__all__变量，控制需要导入的子包或者模块。</p>
+
+<pre><code>在Package目录下的__init__.py文件中添加：
+__all__ = ['Mode1','Modu2','Subpackage']
+
+运行from Package import * ，__all__变量中定义的模块和包被导入当前的名字空间
+</code></pre>
+
+<p>包&mdash;&mdash;</p>
+
+<ul>
+<li><p>合理组织代码</p>
+
+<pre><code>Proj/
+|---README
+    |----LICENSE
+    |----setup.py
+    |-----requirements.txt
+    |-----sample/
+    |   |----__init__.py
+    |   |----core.py
+    |   |----help.py
+    |------docs/
+    |   |------conf.py
+    |   |------index.rst
+    |------bin/
+    |------package/
+    |   |-----__init__.py
+    |   |------sunpackage/
+    |   |------......
+    |------tests/
+    |   |------test_basic.py
+    |   |------test_advanced.py
+</code></pre></li>
+<li>避免名称空间的冲突</li>
+</ul>
+
+
+<p>ATTENTION：这里的包与后面的<strong>软件包</strong>不同，这里的仅限于包含一个或一系列Python文件，为了合理组织代码。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">yimmy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-08T21:28:19+08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/06/python-hen-mei-1/" title="Previous Post: python 味道[1]">&laquo; python 味道[1]</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/11/08/python-wei-dao-2/">Python 味道[2]</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/06/python-hen-mei-1/">Python 味道[1]</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/29/chapter1of2014/">Chapter1of2014</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/15/r-is-coming/">R Is Coming</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/04/pythonxiao-lu-xiang-guan/">Python效率相关</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - yimmy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

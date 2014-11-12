@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>0312 - A sentence A picture A day!</title>
+  <title>Python 味道[1] - A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改 void disploy(const double &amp;r) 常对象 需进行初始化 不能被更新 用于调用常成员函数 A const a(3,4) 开始我的R语言~~
-安装一个包 install. &hellip;">
+  <meta name="description" content="先用pyhton写一段快排： def quicksort（array): if len(array)&lt;=1: return array less = []; greater = []; base = array.pop() for i in array: if i&gt;=base: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/03/12/0312">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/11/06/python-hen-mei-1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -69,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">0312</h1>
+      <h1 class="entry-title">Python 味道[1]</h1>
     
     
       <p class="meta">
@@ -85,33 +83,80 @@
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-11-06T21:52:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>关于const的小结&mdash;-对const总是用的不好，来个小结
-常引用 不对实参更改</p>
+<div class="entry-content"><p>先用pyhton写一段快排：</p>
 
-<blockquote><p>void disploy(const double &amp;r)</p></blockquote>
-
-<p>常对象 需进行初始化 不能被更新 用于调用常成员函数</p>
-
-<blockquote><p>A const a(3,4)</p></blockquote>
-
-<p>开始我的R语言~~
-安装一个包</p>
-
-<blockquote><p>install.packages(&ldquo;vcd&rdquo;)//联网~~
-下载的二进制程序包在</p>
-
-<pre><code>/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpHE30oP/downloaded_packages里
+<pre><code>def quicksort（array):
+    if len(array)&lt;=1:
+        return array
+    less = [];
+    greater = [];
+    base = array.pop()
+    for i in array:
+        if i&gt;=base:
+            greater.append(i)
+        else:
+            less.append(i)
+    return quicksort(less)+[base]+quicksort(greater)
 </code></pre>
 
-<p>help(package=&ldquo;vcd&rdquo;)
-library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquote>
+<p>python味道：
+像伪代码像写文章；代码风格整齐；理解它的标准库；库和框架，强调团队</p>
+
+<p>编写函数4原则：</p>
+
+<ul>
+<li>函数尽量短小，嵌套层次不要过深</li>
+<li>函数声明简单、易于使用。名字合理，参数不要过多</li>
+<li>函数参数设计考虑向下兼容。通过加入默认参数避免退化，做到向下版本更新兼容 <code>def play(name,type=a.info):</code></li>
+<li>一个函数只做一件事，语句粒度一致性【高级抽象与细粒度的字符处理】</li>
+</ul>
+
+
+<p>将常量集中到一个文件中：</p>
+
+<p>在python中使用常量：</p>
+
+<ul>
+<li>命名风格，常量名全部大写</li>
+<li><p>自定义类实现常量功能。要符合“命名全部为大写”和“值一旦绑定不可再修改”，解决方法见下，通过命名不符合规则时和修改时抛出异常解决。</p>
+
+<pre><code>class _const: #私有类
+    class ConstError(TypeError):pass
+    class ConstCaseError(ConstError):pass
+
+    def _setattr__(self,name,value):#__xxx__ 系统定义名字
+        if self.__dict__.has_key(name):
+            raise self.ConstError,"Cannot change%s" % name
+        if not name.upper():
+            raise self.ConstCaseError,'const "%s" is not all uppercase' % name
+
+        self.__dict__[name]=value
+
+import sys
+sys.modules[__name__]=_const()
+</code></pre></li>
+</ul>
+
+
+<p>上述模块命名为const.py，使用方式如下</p>
+
+<pre><code>    import const
+    const.MY_CONSTANT = 1
+    const.MY_SECOND_CONSTANT = 'a'
+</code></pre>
+
+<p>在其他模块中引用这些常量【将上面的文件命名为constant.py】</p>
+
+<pre><code>from constant import const
+print const.MY_SECOND_CONSTANT
+</code></pre>
 </div>
 
 
@@ -134,7 +179,7 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
   
 
 
-<time datetime="2014-03-12T23:21:50+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2014</time>
+<time datetime="2014-11-06T21:52:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2014</time>
       
 
 
@@ -149,10 +194,10 @@ library(vcd)//加载包！！否则报警告信息没有数据集</p></blockquot
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/11/0311/" title="Previous Post: 0311">&laquo; 0311</a>
+        <a class="basic-alignment left" href="/blog/2014/10/29/chapter1of2014/" title="Previous Post: chapter1of2014">&laquo; chapter1of2014</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/03/17/0317/" title="Next Post: 0317">0317 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/11/08/python-wei-dao-2/" title="Next Post: python 味道[2]">python 味道[2] &raquo;</a>
       
     </p>
   </footer>
