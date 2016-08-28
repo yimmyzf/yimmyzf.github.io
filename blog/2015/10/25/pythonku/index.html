@@ -5,14 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Python Challenge(1) - A sentence A picture A day!</title>
+  <title>Python库 - A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="python 使用记录
-获得字符ascii码/Unicode number = ord(char)
-由ascii/Unicode获得字符 char = chr(number) / char = unichr(number) urllib模块
-urllib.urlopen()返回一个类文件对象， &hellip;">
+  <meta name="description" content="math库：
+三角函数、开方根号、π、e为基数
+random库：
+seed、random、uniform、randint、randrange、choice()从列表中随机返回一个元素、shuffle()将列表中元素随机打乱、sample
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +22,7 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/08/19/python-challenge-1">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2015/10/25/pythonku">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -70,7 +71,7 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Python Challenge(1)</h1>
+      <h1 class="entry-title">Python库</h1>
     
     
       <p class="meta">
@@ -86,41 +87,17 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   
 
 
-<time datetime="2014-08-19T23:10:04+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2014</time>
+<time datetime="2015-10-25T22:38:11+08:00" pubdate data-updated="true">Oct 25<span>th</span>, 2015</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>python 使用记录
-获得字符ascii码/Unicode number = <strong>ord</strong>(char)
-由ascii/Unicode获得字符 char = <strong>chr</strong>(number) / char = <strong>unichr</strong>(number)</p>
-
-<p>urllib模块
-urllib.urlopen()返回一个类文件对象，它提供的方法：</p>
-
-<blockquote><p>  read(),readline(),readlines(),fileno(),close()&mdash;&mdash;与文件对象一样
-  info()&mdash;&mdash;返回httplib.HTTPMessage对象，表示远程服务器返回的头信息
-  getcode()&mdash;&mdash;返回HTTP状态码：200&mdash;成功返回，404网址未找到
-  geturl()&mdash;&mdash;返回请求url
-  urllib.quote(string[, safe])：对字符串进行编码。参数safe指定了不需要编码的字符
-  urllib.unquote(string) ：对字符串进行解码；
-  urllib.urlencode(query[, doseq])：将dict或者包含两个元素的元组列表转换成url参数。例如 字典{&lsquo;name&rsquo;: &lsquo;dark-bull&rsquo;, &lsquo;age&rsquo;: 200}将被转换为&#8221;name=dark-bull&amp;age=200&#8221;
-  urllib.pathname2url(path)：将本地路径转换成url路径；
-  urllib.url2pathname(path)：将url路径转换成本地路径</p></blockquote>
-
-<p>level4
-主要是使用urllib和re
-m = re.compile(r&#8217;\d+&lsquo;)
-nextnumber = m.search(currentline).group()
-nexturl = &#8217;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=</a>&rsquo;+nextnumber
-currentline = urllib.urlopen(nexturl).read()
-补充两点：
-f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s</a>&rdquo; % nextnumber)
-取nextnumber的方法可以使用split然后取list里的-1</p>
-
-<p>result：peak.html</p>
+<div class="entry-content"><p><font color="darkred"><strong>math库：</strong></font>
+三角函数、开方根号、π、e为基数
+<font color="darkred"><strong>random库：</strong></font>
+seed、random、uniform、randint、randrange、choice(<list>)从列表中随机返回一个元素、shuffle(<list>)将列表中元素随机打乱、sample</p>
 </div>
 
 
@@ -143,7 +120,7 @@ f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedl
   
 
 
-<time datetime="2014-08-19T23:10:04+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2014</time>
+<time datetime="2015-10-25T22:38:11+08:00" pubdate data-updated="true">Oct 25<span>th</span>, 2015</time>
       
 
 
@@ -158,10 +135,10 @@ f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedl
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/08/03/hadoop-chu-ji-ji-lu/" title="Previous Post: Hadoop 初级记录">&laquo; Hadoop 初级记录</a>
+        <a class="basic-alignment left" href="/blog/2015/10/22/python2-and-3chai-bie/" title="Previous Post: python2&amp;3差别">&laquo; python2&amp;3差别</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/08/20/python-challenge-2/" title="Next Post: python challenge(2)">python challenge(2) &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2016/07/25/kua-jing-dian-shang-ji-wan-dou-gong-zhu/" title="Next Post: 跨境电商记-豌豆公主">跨境电商记-豌豆公主 &raquo;</a>
       
     </p>
   </footer>

@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Python Challenge(1) - A sentence A picture A day!</title>
+  <title>A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="python 使用记录
-获得字符ascii码/Unicode number = ord(char)
-由ascii/Unicode获得字符 char = chr(number) / char = unichr(number) urllib模块
-urllib.urlopen()返回一个类文件对象， &hellip;">
+  <meta name="description" content="Today I finish a DATA analysis 将300个不同城市的用户搜索行为进行分析，主要关注点为搜索化妆品的时间，将数据打标签将时间提取
+下图为化妆品的搜索时间 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +19,7 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/08/19/python-challenge-1">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/page/4">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -65,12 +63,15 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Python Challenge(1)</h1>
+      <h1 class="entry-title"><a href="/blog/2014/03/09/0309/">0309</a></h1>
     
     
       <p class="meta">
@@ -86,89 +87,70 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   
 
 
-<time datetime="2014-08-19T23:10:04+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2014</time>
+<time datetime="2014-03-09T22:47:43+08:00" pubdate data-updated="true">Mar 9<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>python 使用记录
-获得字符ascii码/Unicode number = <strong>ord</strong>(char)
-由ascii/Unicode获得字符 char = <strong>chr</strong>(number) / char = <strong>unichr</strong>(number)</p>
+  <div class="entry-content"><h3>Today I finish a DATA analysis</h3>
 
-<p>urllib模块
-urllib.urlopen()返回一个类文件对象，它提供的方法：</p>
+<p>将300个不同城市的用户搜索行为进行分析，主要关注点为搜索化妆品的时间，将数据打标签将时间提取
+下图为化妆品的搜索时间</p>
 
-<blockquote><p>  read(),readline(),readlines(),fileno(),close()&mdash;&mdash;与文件对象一样
-  info()&mdash;&mdash;返回httplib.HTTPMessage对象，表示远程服务器返回的头信息
-  getcode()&mdash;&mdash;返回HTTP状态码：200&mdash;成功返回，404网址未找到
-  geturl()&mdash;&mdash;返回请求url
-  urllib.quote(string[, safe])：对字符串进行编码。参数safe指定了不需要编码的字符
-  urllib.unquote(string) ：对字符串进行解码；
-  urllib.urlencode(query[, doseq])：将dict或者包含两个元素的元组列表转换成url参数。例如 字典{&lsquo;name&rsquo;: &lsquo;dark-bull&rsquo;, &lsquo;age&rsquo;: 200}将被转换为&#8221;name=dark-bull&amp;age=200&#8221;
-  urllib.pathname2url(path)：将本地路径转换成url路径；
-  urllib.url2pathname(path)：将url路径转换成本地路径</p></blockquote>
-
-<p>level4
-主要是使用urllib和re
-m = re.compile(r&#8217;\d+&lsquo;)
-nextnumber = m.search(currentline).group()
-nexturl = &#8217;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=</a>&rsquo;+nextnumber
-currentline = urllib.urlopen(nexturl).read()
-补充两点：
-f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s</a>&rdquo; % nextnumber)
-取nextnumber的方法可以使用split然后取list里的-1</p>
-
-<p>result：peak.html</p>
+<p><img src="/images/0309.png" width="350" height="200" /></p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">yimmy</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2014-08-19T23:10:04+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2014</time>
+    </article>
+  
+  
+    <article>
       
-
-
-    </p>
+  <header>
     
-      <div class="sharing">
-  
-  
-  
-</div>
-
+      <h1 class="entry-title"><a href="/blog/2014/01/04/hello-world/">Hello World</a></h1>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2014/08/03/hadoop-chu-ji-ji-lu/" title="Previous Post: Hadoop 初级记录">&laquo; Hadoop 初级记录</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/08/20/python-challenge-2/" title="Next Post: python challenge(2)">python challenge(2) &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
+    
+      <p class="meta">
+        
 
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-04T17:07:13+08:00" pubdate data-updated="true">Jan 4<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Hello World</h2>
 </div>
+  
+  
 
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
+    
+  </div>
+</div>
 <aside class="sidebar">
   
     <section>
@@ -204,7 +186,6 @@ f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedl
 
   
 </aside>
-
 
     </div>
   </div>

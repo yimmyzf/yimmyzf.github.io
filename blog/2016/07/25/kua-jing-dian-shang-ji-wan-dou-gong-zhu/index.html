@@ -5,14 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Python Challenge(1) - A sentence A picture A day!</title>
+  <title>跨境电商记-豌豆公主 - A sentence A picture A day!</title>
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="python 使用记录
-获得字符ascii码/Unicode number = ord(char)
-由ascii/Unicode获得字符 char = chr(number) / char = unichr(number) urllib模块
-urllib.urlopen()返回一个类文件对象， &hellip;">
+  <meta name="description" content="创始人及平台介绍：
+翁永彪深耕日本市场多年，曾同合伙人和雷军一起成立日本金山
+豌豆公主创办于2014年，专注于日淘的跨境电商平台，目前已完成A+轮融资 三次垂直：
+日本商品到国内消费者的垂直电商-只做女性-25-35岁的年龄层
+产品层面：美妆、个护-食品和健康产品-家居、家庭用品（与身体、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +22,7 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yimmyzf.github.io/blog/2014/08/19/python-challenge-1">
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2016/07/25/kua-jing-dian-shang-ji-wan-dou-gong-zhu">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
@@ -70,7 +71,7 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Python Challenge(1)</h1>
+      <h1 class="entry-title">跨境电商记-豌豆公主</h1>
     
     
       <p class="meta">
@@ -86,41 +87,40 @@ urllib.urlopen()返回一个类文件对象， &hellip;">
   
 
 
-<time datetime="2014-08-19T23:10:04+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2014</time>
+<time datetime="2016-07-25T08:47:53+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2016</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>python 使用记录
-获得字符ascii码/Unicode number = <strong>ord</strong>(char)
-由ascii/Unicode获得字符 char = <strong>chr</strong>(number) / char = <strong>unichr</strong>(number)</p>
+<div class="entry-content"><p>创始人及平台介绍：
+翁永彪深耕日本市场多年，曾同合伙人和雷军一起成立日本金山
+豌豆公主创办于2014年，专注于日淘的跨境电商平台，目前已完成A+轮融资</p>
 
-<p>urllib模块
-urllib.urlopen()返回一个类文件对象，它提供的方法：</p>
+<p>三次垂直：
+日本商品到国内消费者的垂直电商-只做女性-25-35岁的年龄层
+产品层面：美妆、个护-食品和健康产品-家居、家庭用品（与身体、小孩直接接触的）</p>
 
-<blockquote><p>  read(),readline(),readlines(),fileno(),close()&mdash;&mdash;与文件对象一样
-  info()&mdash;&mdash;返回httplib.HTTPMessage对象，表示远程服务器返回的头信息
-  getcode()&mdash;&mdash;返回HTTP状态码：200&mdash;成功返回，404网址未找到
-  geturl()&mdash;&mdash;返回请求url
-  urllib.quote(string[, safe])：对字符串进行编码。参数safe指定了不需要编码的字符
-  urllib.unquote(string) ：对字符串进行解码；
-  urllib.urlencode(query[, doseq])：将dict或者包含两个元素的元组列表转换成url参数。例如 字典{&lsquo;name&rsquo;: &lsquo;dark-bull&rsquo;, &lsquo;age&rsquo;: 200}将被转换为&#8221;name=dark-bull&amp;age=200&#8221;
-  urllib.pathname2url(path)：将本地路径转换成url路径；
-  urllib.url2pathname(path)：将url路径转换成本地路径</p></blockquote>
+<p>做日本的B端企业
+小红书、菠萝蜜、考拉、豌豆公主等跨境电商都只卖2000多种SKU，而日本至少有300万种，大家都是在买一些爆品
+日本大企业持不允许态度，原因如下：
+已有中国子公司，无法处理关系与矛盾
+法律风险
+侵犯商标的风险
+日文产品说明导致误用误食，如何承担对消费者的责任
+与大公司目前的合作方式：下游渠道扫货，正式合作不行
+（但是随着访日旅客消费行为的变化，会更加重视跨境）
+目前最大的问题：拿到稳定、大量的货源
+本土优先、越下游越拿不到货；今后要做的事：跟大公司一起去探讨跨境电商的政策，规避他们的担心，最好是<strong>他们自己不用出什么但中国用户相信这确实是他给我们的</strong>
+目前和日本一个B2C电商合作</p>
 
-<p>level4
-主要是使用urllib和re
-m = re.compile(r&#8217;\d+&lsquo;)
-nextnumber = m.search(currentline).group()
-nexturl = &#8217;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=</a>&rsquo;+nextnumber
-currentline = urllib.urlopen(nexturl).read()
-补充两点：
-f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s</a>&rdquo; % nextnumber)
-取nextnumber的方法可以使用split然后取list里的-1</p>
+<p>对于中小企业&mdash;Wonderfull品台（一站式服务）
+无初期费用，无固定成本，只要产品好，有什么<strong>品牌故事</strong>
+（**翁永彪观点：信息跨境才是跨境电商里面最核心的，大家不认识的产品太多，我们首先让你知道有这样的品牌，这个东西好在哪，解决什么，你才能想到有什么需要）</p>
 
-<p>result：peak.html</p>
+<p>品牌运营
+现在豌豆公主在做的事情，帮助日本中小企业做他们的品牌故事，拍视频，写文章，年代感、专注点。产品要先发到豌豆公主的中心仓，企业只需要发货其他都不用做</p>
 </div>
 
 
@@ -143,7 +143,7 @@ f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedl
   
 
 
-<time datetime="2014-08-19T23:10:04+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2014</time>
+<time datetime="2016-07-25T08:47:53+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2016</time>
       
 
 
@@ -158,10 +158,10 @@ f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedl
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/08/03/hadoop-chu-ji-ji-lu/" title="Previous Post: Hadoop 初级记录">&laquo; Hadoop 初级记录</a>
+        <a class="basic-alignment left" href="/blog/2015/10/25/pythonku/" title="Previous Post: python库">&laquo; python库</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/08/20/python-challenge-2/" title="Next Post: python challenge(2)">python challenge(2) &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2016/08/28/r-is-coming-2/" title="Next Post: R is coming(2)">R is coming(2) &raquo;</a>
       
     </p>
   </footer>

@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Python2&amp;3差别 - A sentence A picture A day!</title>
+  <meta name="author" content="yimmy">
+
+  
+  <meta name="description" content="&emsp;&emsp;在电脑上试运行GitHub上用python3.4编的一段代码【GitHub链接-github.com/xiaff/dbc-downloader】，功能是将豆瓣读书上的书与短评存成markdown或者html形式。本机使用的是python2.7， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yimmyzf.github.io/blog/2015/10/22/python2-and-3chai-bie">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="A sentence A picture A day!" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">A sentence A picture A day!</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yimmyzf.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Python2&amp;3差别</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-22T19:16:40+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>&emsp;&emsp;在电脑上试运行GitHub上用python3.4编的一段代码【GitHub链接-github.com/xiaff/dbc-downloader】，功能是将豆瓣读书上的书与短评存成markdown或者html形式。本机使用的是python2.7，改代码过程顺便总结2与3的一些区别。</p>
+
+<p>具体参照<a href="http://old.sebug.net/paper/books/dive-into-python3/porting-code-to-python-3-with-2to3.html">python2to3</a></p>
+
+<ol>
+<li>print与print()</li>
+<li>Python 2有两种字符串类型：Unicode字符串和非Unicode字符串。Python 3只有Unicode一种类型</li>
+<li>Python 2有两个全局函数可以把对象强制转换成字符串：unicode()把对象转换成Unicode字符串，还有str()把对象转换为非Unicode字符串。Python 3只有一种字符串类型，所以str()函数即可完成所有的功能。</li>
+<li>long长整型</li>
+<li><p>字典类方法has_key()==>in运算符</p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>a_dictionary.has_key(&lsquo;PapayaWhip&rsquo;)</td>
+<td>&lsquo;PapayaWhip&rsquo; in a_dictionary</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>x + a_dictionary.has_key(y)</td>
+<td>x + (y in a_dictionary)</td>
+</tr>
+</tbody>
+</table>
+
+
+<p> in的优先级大于运算符+，运算符or的优先级高于运算符in</p></li>
+<li><p>返回列表的字典类方法</p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>a_dictionary.keys()</td>
+<td>list(a_dictionary.keys())</td>
+</tr>
+<tr>
+<td> 2</td>
+<td> a_dictionary.items()</td>
+<td>list(a_dictionary.items())</td>
+</tr>
+<tr>
+<td> 3</td>
+<td>a_dictionary.iterkeys()</td>
+<td>iter(a_dictionary.keys())</td>
+</tr>
+<tr>
+<td> 4</td>
+<td>[i for i in a_dictionary.iterkeys()]</td>
+<td>[i for i in a_dictionary.keys()]</td>
+</tr>
+<tr>
+<td> 5</td>
+<td>min(a_dictionary.keys())</td>
+<td>没变化</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>使用list()函数将keys()的返回值转换为一个静态列表</li>
+<li>这是另外一种视图(关于items()方法的)到列表的转换。2to3对values()方法返回值的转换也是一样</li>
+<li>Python 3里不再支持iterkeys()了。如果必要，使用iter()将keys()的返回值转换成为一个迭代器。</li>
+<li>2to3也能识别出keys()方法的返回值被立即传给另外一个会遍历整个序列的函数，所以也就没有必要先把keys()的返回值转换到一个列表。相反的，min()函数会很乐意遍历视图。这个过程对min()，max()，sum()，list()，tuple()，set()，sorted()，any()和all()同样有效</li>
+</ul>
+</li>
+<li><p>被重命名或者重新组织的模块</p>
+
+<p> <font color="MediumOrchid"><strong>http</strong></font></p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>import httplib</td>
+<td>import http.client</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>import Cookie</td>
+<td>import http.cookies</td>
+</tr>
+<tr>
+<td> 3</td>
+<td>import cookielib</td>
+<td>import http.cookiejar</td>
+</tr>
+<tr>
+<td> 4</td>
+<td>import BaseHTTPServer</td>
+<td>import http.server</td>
+</tr>
+<tr>
+<td> </td>
+<td>import SimpleHTTPServer</td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td>import CGIHttpServer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>http.client模块实现了一个底层的库，可以用来请求http资源，解析http响应。</li>
+<li>http.cookies模块提供一个蟒样的(Pythonic)接口来获取通过http头部(http header)Set-Cookie发送的cookies。</li>
+<li>常用的流行的浏览器会把cookies以文件形式存放在磁盘上，http.cookiejar模块可以操作这些文件。</li>
+<li>http.server模块实现了一个基本的http服务器</li>
+</ul>
+
+
+<p> <font color="MediumOrchid"><strong>urllib</strong></font></p>
+
+<p> Python 2有一些用来分析，编码和获取URL的模块，但是这些模块就相互重叠。在Python 3里，这些模块被重构、组合成了一个单独的包</p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>import urllib</td>
+<td>import urllib.request, urllib.parse, urllib.error</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>import urllib2</td>
+<td>import urllib.request, urllib.error</td>
+</tr>
+<tr>
+<td> 3</td>
+<td>import urlparse</td>
+<td>import urllib.parse</td>
+</tr>
+<tr>
+<td> 4</td>
+<td>import robotparser</td>
+<td>import urllib.robotparser</td>
+</tr>
+<tr>
+<td> 5</td>
+<td>from urllib import FancyURLopener</td>
+<td>from urllib.request import FancyURLopener</td>
+</tr>
+<tr>
+<td>  </td>
+<td>from urllib import urlencode</td>
+<td>from urllib.parse import urlencode</td>
+</tr>
+<tr>
+<td> 6</td>
+<td>from urllib2 import Request</td>
+<td>from urllib.request import Request</td>
+</tr>
+<tr>
+<td>  </td>
+<td>from urllib2 import HTTPError</td>
+<td>from urllib.error import HTTPError</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p> 全局函数raw_input()和input()</p>
+
+<table>
+<thead>
+<tr>
+<th>Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>raw_input()</td>
+<td>input()</td>
+</tr>
+<tr>
+<td>2</td>
+<td>raw_input(&lsquo;prompt&rsquo;)</td>
+<td>input(&lsquo;prompt&rsquo;)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>input()</td>
+<td>eval(input())</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+
+
+<hr />
+
+<p>几点：</p>
+
+<ul>
+<li><p><font color="RoyalBlue">input问题：</font>在python2中使用，若使用input函数输入时需要加双引号，否则不是str类型。input和raw_input的区别</p></li>
+<li><p><font color="RoyalBlue">utf8 编码问题：</font>
+open(file,&lsquo;w&rsquo;,encoding=&lsquo;utf-8&rsquo;)在python2中的不可用性
+解决办法是去掉encoding=&lsquo;utf-8&#8217;，在代码开头加入</p>
+
+<p>  <code>import sys</code></p>
+
+<p>  <code>reload(sys)</code></p>
+
+<p>  <code>sys.setdefaultencoding('utf8')</code></p></li>
+<li><p><font color="RoyalBlue">urllib2的调用</font>使用urllib2发请求时注意R要大写，是urllib2.Request</p></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">yimmy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-22T19:16:40+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2015</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/12/pythonwei-dao-3/" title="Previous Post: python味道(3)">&laquo; python味道(3)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/10/25/pythonku/" title="Next Post: python库">python库 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/08/28/r-is-coming-2/">R Is Coming(2)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/25/kua-jing-dian-shang-ji-wan-dou-gong-zhu/">跨境电商记-豌豆公主</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/25/pythonku/">Python库</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/22/python2-and-3chai-bie/">Python2&amp;3差别</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/12/pythonwei-dao-3/">Python味道(3)</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - yimmy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

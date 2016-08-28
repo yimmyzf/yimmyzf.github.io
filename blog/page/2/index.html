@@ -9,13 +9,9 @@
   <meta name="author" content="yimmy">
 
   
-  <meta name="description" content="Hadoop
-这周用了hadoop，主要是Hadoop Streaming相关，不涉及框架与原理，主要将用过的作小结与记录，以后不断补充
-Part I 用户脚本命令
-常规选项
--conf 指定应用程序配置文件
--D 为指定属性指定值value
--archives &lt;用逗号分隔列表> &hellip;">
+  <meta name="description" content="随笔记录 返回组合数C(n,r) `for(i=1;i&lt;=r;i++) sum = sum * (n-r+1)/i` 返回排列数A(n,r) `for(i=0;i&lt;r;i++) sum=sum * (n-r)` 重复排列
+允许重复地选取r个物体，把这r个物体排列成一行
+重复组合 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +66,349 @@ Part I 用户脚本命令
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/29/pai-lie-zu-he/">排列组合</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-29T23:11:03+08:00" pubdate data-updated="true">Sep 29<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>随笔记录</p>
+
+<p>返回组合数C(n,r)</p>
+
+<p>`for(i=1;i&lt;=r;i++)</p>
+
+<pre><code>sum = sum * (n-r+1)/i`
+</code></pre>
+
+<p>返回排列数A(n,r)</p>
+
+<p>`for(i=0;i&lt;r;i++)</p>
+
+<pre><code>sum=sum * (n-r)`
+</code></pre>
+
+<p>重复排列
+允许重复地选取r个物体，把这r个物体排列成一行
+重复组合
+允许重复地取，不考虑物体间的次序
+不全相异的全排列
+n1个物体是相同的，n2个物体是相同的……n个物体中不相同的种类是k，即n=n1+n2+n3+……+nk
+圆周排列
+每种排列重复了r次
+Q(n,r)=A(n,r)/r
+Q(n,n)=(n-1)!</p>
+
+<p>排列的生成算法：
+序数法、字典序法、邻位互换法</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/20/github-and-and-svn/">Github&amp;&amp;SVN</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-20T20:38:32+08:00" pubdate data-updated="true">Sep 20<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>About Github
+将现有机器上得项目上传到github上
+First 在网站上create new repository</p>
+
+<p>到自己本机项目的文件夹中执行
+&mdash;git init
+&mdash;git add .
+&mdash;git commit -m &ldquo;&rdquo;
+&mdash;git remote add origin <a href="https://github.com/yimmyzf/findAlias.git">https://github.com/yimmyzf/findAlias.git</a>
+&mdash;git push -u origin master
+其中origin为一个别名</p>
+
+<p>若在本地机器上添加了文件a 或者文件夹di 再使用
+&mdash;git add a或者 &mdash;git add di
+&mdash;git commit -m &ldquo;&rdquo;
+&mdash;git push -u origin master</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/01/translation-re-module/">Translation:re Module</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-01T00:22:25+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>用了一阵的python的re模块，自己总结过几次常用的方法，回头再看官方文档决定&mdash;-翻译一遍！</p>
+
+<p><a href="https://docs.python.org/2/library/re.html">https://docs.python.org/2/library/re.html</a></p>
+
+<p><strong>regular expression operations 正则表达式相关操作</strong></p>
+
+<p>这个模块提供了与Perl相似的正则匹配操作。查询的模式与字符串可以是Unicode以及8比特串。</p>
+
+<p>正则表达式使用反斜杠表示特殊字符的一般形式。比如要匹配反斜线\ 表达式为‘&#92;’,其中头尾的为这则表达式所需的格式。</p>
+
+<p>使用Python直接处理原始字符创；若字符串前缀以‘r’开头，反斜线将不被特殊处理。例如 r&#8221;\n&#8221;代表两个元素包含&#8217;\&lsquo;和&#8217;n&rsquo;</p>
+
+<p><strong>Regular Expression Syntax句法</strong>
+正则表达式是对能匹配的字符串的一种表达方式。</p>
+
+<p>正则表达式包括普通字符与特殊字符。
+特殊字符不仅有普通字符的功能，还具有正则表达式的解释方式。
+特殊字符有：</p>
+
+<p> &lsquo;.&rsquo;</p>
+
+<pre><code>    在默认情况下，它能匹配除新的一行以外的字符。当[DOTALL](https://docs.python.org/2/library/re.html#re.DOTALL)被设置时也可以表示新的一行
+</code></pre>
+
+<p> &lsquo;^&rsquo;</p>
+
+<pre><code>    匹配字符串开始&gt;      
+</code></pre>
+
+<p> &lsquo;$&rsquo;</p>
+
+<pre><code>    匹配字符串结束&gt;      
+</code></pre>
+
+<p> &lsquo;*&rsquo;</p>
+
+<pre><code>    匹配0或更多重复的字符，**尽可能的**匹配重复的
+</code></pre>
+
+<p>English Words Record：
+backslash反斜线
+caret 脱字号^
+indicate指示，暗示
+collide 碰撞，冲突
+specify具体说明</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/20/python-challenge-2/">Python Challenge(2)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-20T23:25:57+08:00" pubdate data-updated="true">Aug 20<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>zipfile模块</h3>
+
+<p><strong>用途：</strong>python压缩和解压缩</p>
+
+<p>help(zipfile)一下，看该模块的介绍</p>
+
+<p>可以去<a href="https://docs.python.org/2/library/zipfile.html">https://docs.python.org/2/library/zipfile.html</a>去看doc</p>
+
+<p>模块源码<a href="http://hg.python.org/cpython/file/2.7/Lib/zipfile.py">http://hg.python.org/cpython/file/2.7/Lib/zipfile.py</a></p>
+
+<p>主要有以下几个类:<em>ZipFile</em>,<em>PyZipFile</em>,<em>ZipInfo</em>;异常类<em>BadZipFile</em>,<em>LargeZipFile</em></p>
+
+<p>zipfile里两个重要的类：<em>ZipFile</em>和<em>ZipInefo</em>。一个创建和读取zip文件，一个存储zip文件的每个文件的信息.</p>
+
+<p>class zipfile.ZipFile(file[, mode[, compression[, allowZip64]]])</p>
+
+<pre><code>z=zipfile.zipfile(filename,'r')
+
+for i in z.namelist()---压缩包内文件名
+
+for j in z.infolist()---返回一个zipinfo的列表,一个 zipinfo对象中包含压缩包内一个文件的信息,常用的filename,  file_size,date_time,header_offerset
+</code></pre>
+
+<p>ZipFile.infolist()返回一个列表；ZipFile.getinfo(name)返回一个ZipInfo</p>
+
+<p>ZipFile.open(name[, mode[, password]]) 打开压缩文档中名为name的文档</p>
+
+<p>对文件的基本操作 read()、write()、close()</p>
+
+<h3>pickle模块</h3>
+
+<p>在一个文件中储存任何python对象，之后能够将其完整取出&mdash;&mdash;<strong>持久地储存对象。</strong></p>
+
+<p>还有另一个模块称为cPickle，它的功能和pickle模块完全相同，只不过它是用C语言编写的，因此要快得多</p>
+
+<pre><code>obj = {"a": 1, "b": 2, "c": 3} 
+\# 将 obj 持久化保存到文件 tmp.txt 中&gt;    
+pickle.dump(obj, open("tmp.txt", "w"))
+\# do something else ...
+\# 从 tmp.txt 中读取并恢复 obj 对象
+obj2 = pickle.load(open("tmp.txt", "r"))
+print obj2
+</code></pre>
+
+<h4>level5</h4>
+
+<p><code>m=urllib.urlopen('http://www.pythonchallenge.com/pc/def/banner.p').read（）
+p=pickle.load(m)</code></p>
+
+<p>后来把.read()去掉就能看出端倪了~~</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/19/python-challenge-1/">Python Challenge(1)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-19T23:10:04+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>python 使用记录
+获得字符ascii码/Unicode number = <strong>ord</strong>(char)
+由ascii/Unicode获得字符 char = <strong>chr</strong>(number) / char = <strong>unichr</strong>(number)</p>
+
+<p>urllib模块
+urllib.urlopen()返回一个类文件对象，它提供的方法：</p>
+
+<blockquote><p>  read(),readline(),readlines(),fileno(),close()&mdash;&mdash;与文件对象一样
+  info()&mdash;&mdash;返回httplib.HTTPMessage对象，表示远程服务器返回的头信息
+  getcode()&mdash;&mdash;返回HTTP状态码：200&mdash;成功返回，404网址未找到
+  geturl()&mdash;&mdash;返回请求url
+  urllib.quote(string[, safe])：对字符串进行编码。参数safe指定了不需要编码的字符
+  urllib.unquote(string) ：对字符串进行解码；
+  urllib.urlencode(query[, doseq])：将dict或者包含两个元素的元组列表转换成url参数。例如 字典{&lsquo;name&rsquo;: &lsquo;dark-bull&rsquo;, &lsquo;age&rsquo;: 200}将被转换为&#8221;name=dark-bull&amp;age=200&#8221;
+  urllib.pathname2url(path)：将本地路径转换成url路径；
+  urllib.url2pathname(path)：将url路径转换成本地路径</p></blockquote>
+
+<p>level4
+主要是使用urllib和re
+m = re.compile(r&#8217;\d+&lsquo;)
+nextnumber = m.search(currentline).group()
+nexturl = &#8217;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=</a>&rsquo;+nextnumber
+currentline = urllib.urlopen(nexturl).read()
+补充两点：
+f = urllib.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s</a>&rdquo; % nextnumber)
+取nextnumber的方法可以使用split然后取list里的-1</p>
+
+<p>result：peak.html</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -415,604 +754,6 @@ end~~</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/07/leetcode-atoi/">Leetcode-atoi&rev Words</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-07T10:37:50+08:00" pubdate data-updated="true">Jun 7<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>String to Integer</h2>
-
-<p>注意的几点：</p>
-
-<pre><code>* 字符串为空
-* 全是空格
-* 字符串前的空格要忽略掉
-* 对‘+’和‘-’的处理
-* 遇到非数字的字符就返回当前值而不是返回0
-* int的范围  -2147483648~2147483647
-</code></pre>
-
-<p>【判断与int最值比较时记得*signal】</p>
-
-<p>又用Python写了一遍，遇到的小问题：</p>
-
-<pre><code>* 空字符串str==''
-* elif
-* 判断条件中要加入i&lt;len(str)
-* 需要用ord()将字符转换成ASCII码
-</code></pre>
-
-<h2>Reverse words in a string</h2>
-
-<p>第一个想法是，用空格将句子分割，再将单词组合
-第二个想法，之前看过类似的，翻转整个句子，再翻转每个单词（同一个函数）
-一开始按照第二种想法写了一下发现翻转之后的实现方法由于有连续空格与一类似，还多了翻转，索性直接用第一种:(</p>
-
-<p>//注意要剔除收尾空格，将连续空格转为一个空格</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>void reverseWords(string &s) {
-</span><span class='line'>    if(s=="")return;
-</span><span class='line'>    
-</span><span class='line'>    stringstream ss(s);// Insert the string into a stream
-</span><span class='line'>    stack&lt;string&gt; tokens;// hold words
-</span><span class='line'>    string buf;//buffer string
-</span><span class='line'>    s="";
-</span><span class='line'>    while(ss&gt;&gt;buf)
-</span><span class='line'>      tokens.push(buf);
-</span><span class='line'>    
-</span><span class='line'>    while(!tokens.empty())
-</span><span class='line'>    {
-</span><span class='line'>        buf=tokens.top();
-</span><span class='line'>        s=s+buf;
-</span><span class='line'>        if(tokens.size()&gt;1)s=s+' ';
-</span><span class='line'>        tokens.pop();
-</span><span class='line'>    }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>用的数据结构为栈stack，要是用vector注意<strong>push_back(),pop_back(),buf=tokens[tokens.size()-1]</strong>
-  vector没有top方法
-然后用Python做了一下，一条语句就能搞定。。。。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def reverseWords(self, s):
-</span><span class='line'>    return ' '.join(s.split()[::-1])</span></code></pre></td></tr></table></div></figure>
-
-
-<p>顺便小结一下和字符串有关的操作：</p>
-
-<blockquote><p>  去掉两边的空格及指定符号</p>
-
-<pre><code>s.strip()
-s.lstrip()//去掉字符串左边开始的空格
-s.rstrip(',')//去掉字符串右边的连续逗号
-</code></pre>
-
-<p>  #strcpy(s1,s2) 复制</p>
-
-<pre><code>s2=s1
-</code></pre>
-
-<p>  #strcat(s1,s2) 连接</p>
-
-<pre><code>s1+=s2
-</code></pre></blockquote>
-
-<pre><code>连接数组中多个字符串：separator.join(strlist)  其中separator=','  strlist=['apple','pie','cake']
-</code></pre>
-
-<blockquote><p>  查找单个字符</p>
-
-<pre><code>#strchr(s1,c)
-position=s1.index(c)
-</code></pre>
-
-<p>  #strstr(s1,s2)查找字符串</p>
-
-<pre><code>index=s1.find(s2)//返回位置，如没有返回-1
-</code></pre>
-
-<p>  #strcmp</p>
-
-<pre><code>cmp(s1,s2)
-</code></pre>
-
-<p>  #strlen(s)</p>
-
-<pre><code>len(s)
-</code></pre>
-
-<p>  s1=s1.upper()</p>
-
-<pre><code>s2=s2.lower()
-</code></pre>
-
-<p>  #strrev(s) 翻转字符串</p>
-
-<pre><code>s=s[::-1]
-</code></pre>
-
-<p>  s.split(&lsquo;,&rsquo;)</p></blockquote>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/06/leetcode-merge/">Leetcode-merge</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-06T20:28:37+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>leetcode里四道与merge有关的题~</p>
-
-<h2>Merge Sorted Array </h2>
-
-<p>思路：从结尾开始合并，在数组A中从m+n-1
-记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] <strong>习惯养成</strong></p>
-
-<h2>Merge Two Sorted Lists</h2>
-
-<p>先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
-写的很啰嗦，用递归又写了一下</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
-</span><span class='line'>{
-</span><span class='line'>  if(l1==NULL)return l2;
-</span><span class='line'>  if(l2==NULL)return l1;
-</span><span class='line'>  
-</span><span class='line'>  ListNode *rHead=NULL;
-</span><span class='line'>  if(l1-&gt;val&lt;l2-&gt;val)
-</span><span class='line'>  {
-</span><span class='line'>      rHead=l1;
-</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1-&gt;next,l2);
-</span><span class='line'>  }
-</span><span class='line'>  else
-</span><span class='line'>  {
-</span><span class='line'>      rHead=l2;
-</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1,l2-&gt;next);
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  return rHead;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>有个不好的习惯声明的指针变量总是忘记  =NULL</p>
-
-<h2>Merge k Sorted Lists</h2>
-
-<p>使用循环不断两两合并</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
-</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
-</span><span class='line'>    int i;
-</span><span class='line'>    ListNode *l=lists[0];
-</span><span class='line'>    for(i=1;i&lt;lists.size();i++)
-</span><span class='line'>    {
-</span><span class='line'>        l=mergeTwoLists(l,lists[i]);
-</span><span class='line'>    }
-</span><span class='line'>    
-</span><span class='line'>    return l;
-</span><span class='line'>    
-</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
-
-
-<p>超时
-不断的两两合并</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
-</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
-</span><span class='line'>    int size=lists.size(),half,i;
-</span><span class='line'>    ListNode *l=lists[0];
-</span><span class='line'>    while(size&gt;1)
-</span><span class='line'>    {
-</span><span class='line'>        half=(size+1)/2;
-</span><span class='line'>        for(i=0;i+half&lt;size;i++)
-</span><span class='line'>        {
-</span><span class='line'>            lists[i]=mergeTwoLists(lists[i],lists[i+half]);
-</span><span class='line'>        }
-</span><span class='line'>        size=half;
-</span><span class='line'>    }
-</span><span class='line'>    return lists[0];
-</span><span class='line'>    
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/05/ji-xie-wen/">鸡血文</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-05T09:20:39+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>  清早，看了一篇文章，让昨天有点down的心情好了很多，将部分文章进行翻译分享一下。
-  文章链接 <a href="http://zenhabits.net/career/">A Guide for Young People: What to Do With Your Life</a></p>
-
-<p>  <strong>学会接受不适</strong></p>
-
-<p>  你能锻炼的最重要的技能之一就是接受不适。最好的事情通常都是困难的，如果你逃避困难和不适，你将错过这些美好的事情。
-  学习、写作、婚姻、马拉松，这些都是不简单的，但是他们都是能给人们打来成就感的。
-  当你发现自己在逃避不适感时，推动自己一下</p>
-
-<p>  <strong>学会接受不确定</strong></p>
-
-<p>  <strong>克服分心与拖延</strong></p>
-
-<p>  你能抓住机会是因为你能够面对不确定性与不适感，但是如果你花时间在社交媒体和看电视上将能难成功。
-  分心与拖延是逃避困难和不适的表现。如果你能很好的接受困难这才是你能有别于其他人。</p>
-
-<p>  <strong>了解你的思维的运作方式</strong></p>
-
-<p>  写博客。你将被迫记录你生活中发生了什么，你学习了什么。这是自我成长的好工具，我推荐给每一给年轻的朋友。</p>
-
-<p>  <strong>小事积累</strong></p>
-
-<p>  从小事做起，如果可能每天都积累，它会随着时间不断增值。</p>
-
-<p>  <strong>变得值得信赖</strong></p>
-
-<p>  每一个任务做到最好，坦率，承认错误改正错误，deadline</p>
-
-<p>  You can start today, and see what life has to offer you.</p>
-
-<hr />
-
-<p>  写这篇文章是因为里面的几个点很触动我：1.迎接不适感与不确定性 2.写博客 3.每一件事情做到最好</p>
-
-<p>  我想这是因为之前的生活顺利，让我这个人缺失了对生活某些方面的理解。这一段的生活在提醒我人不能总生活在舒适区，这样你就是一个生活在脆弱区的人，一旦某天生活面临一个改变，将无所适从。
-  生活之所以有趣有意义，就是因为它能够充满挑战与不确定性，最有意思的地方就是你迎接未知，收获惊喜。我放弃过学习弹琴，放弃过200米，放弃过当一名幼师，放弃过努力选择一个好的lab和intern，曾经的那些非常合理的理由已经没有了意义，如今后悔，所以我知道坚持的意义。</p>
-
-<p>  坚持写博客真的不是容易的事，主要是每天忙到11点多的时候，总是想离开实验室早点休息准备迎接明天，或许是由于生活中自己认为有意义的事太少。change it。</p>
-
-<p>  关于每件事做到最好，是因为最近一个工作中一个简单的报告。再简单，minjun依然能谈到排版，字多图少，以及SQL语句结果中应排查的问题。我觉得哪怕一件再小的事也应该完美点。</p>
-
-<p>  <p style="color:darksalmon">HAVE A NICE DAY！</p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/29/markdownxiao-jie/">Markdown小结</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-29T17:15:32+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>对自己常用的进行一个小结，希望能更好的用它来writing。
-小结了第一版之后发现还是翻译官方文档吧。。。<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">markdown</a>。</p>
-
-<p>网页版<a href="http://markdown-here.com/livedemo.html">markdown</a></p>
-
-<h2>标题</h2>
-
-<blockquote><p>   #H1</p>
-
-<p>   ##H2</p>
-
-<p>   ###H3</p>
-
-<p>   H1  =====</p>
-
-<p>  H2   &mdash;&mdash;&ndash;</p></blockquote>
-
-<h2>强调</h2>
-
-<blockquote><pre><code>斜体 ： *星号* 或者 _下划线_
-加粗：**星号\**   __下划线__
-斜体和加粗: **__**
-划去：~~划去~~
-</code></pre></blockquote>
-
-<h2>区块引用</h2>
-
-<blockquote><p>   使用>在每行的最前面 表示区块
-   使用>>进行嵌套</p></blockquote>
-
-<h2>列表</h2>
-
-<p>无序列表使用 * 或 — 或 +。
-有序列表 数字接英文句点 空格:</p>
-
-<ol>
-<li></li>
-<li></li>
-</ol>
-
-
-<h2>代码</h2>
-
-<p>注意&#8220;`  与 &#8220;`第一个之后要换行在写代码，否则在rake generate时会报错in `rescue in pygments&#8217;: Pygments can&rsquo;t parse unknown language: def. (RuntimeError)</p>
-
-<h2>链接</h2>
-
-<p> [text](url &ldquo;title&rdquo;) title可省
-参考式的[google] 后接[google]:<a href="http://www.google.com/">http://www.google.com/</a>
-参考式的[google][1] 后接[1]:<a href="http://www.google.com/">http://www.google.com/</a></p>
-
-<h2>图片</h2>
-
-<ol>
-<li>![Alt text](/images/img.jpg &ldquo;title&rdquo;)</li>
-<li> 我自己常用的是 &lt;img src=&ldquo;/images/0311.jpg&rdquo; width=&ldquo;200&rdquo; height=&ldquo;200&rdquo; /></li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/29/protocol/">Protocol</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-29T16:40:09+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>[TOC]</p>
-
-<p>回归写作第一篇
-关于协议</p>
-
-<p><strong>层模型</strong>
-因特网协议栈<strong>五层模型</strong>：应用层、传输层、网络层、链路层、物理层</p>
-
-<p>OSI <strong>七层模型</strong>:应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</p>
-
-<p>每一层都有各自的协议</p>
-
-<p><strong>物理层</strong></p>
-
-<p>电脑组网：光纤、电缆、双绞线、无线电波；传输0、1电信号</p>
-
-<p><strong>链路层</strong></p>
-
-<p>以太网Ethernet 一组电信号构成一个“帧”
-Head：18字节
-Data：46~1500字节</p>
-
-<p>MAC地址
-以太网规定，入网的设备必须有“网卡”接口。MAC地址&mdash;网卡的地址，独一无二，12个十六进制数表示
-以太网中数据包的送达：向本网络中所有的计算机发送，让每台计算机自己判断，是否自己是接受者，与自身MAC地址相同就接收不同就丢弃。</p>
-
-<p><strong>网络层</strong></p>
-
-<p>如果两个计算机不在同一个网络，广播无法到达。
-网络是由无数子网络共同组成的。
-需要一种方法判断MAC地址是否同一子网。同一子网时采用广播方式发送，否则路由查询。
-网络层&mdash;-计算机是否属于同一子网络。网络地址由管理员分配。网络地址确定计算机所在的子网络，MAC地址将数据包送到该子网络中得目标网卡。</p>
-
-<p>IP协议
-“子网掩码”&mdash;判断ip地址是否在同一个网络：将两个IP地址分别与子网掩码进行与运算AND，如果结果相同说明在同一子网。</p>
-
-<p>IP数据包
-整个IP数据包总长度最大为65535字节，若数据包大于1500字节，需分割成几个以太网数据包分开发送</p>
-
-<p>ARP协议（得到同一子网的主机MAC地址）
-一般情况是IP地址已知，但对方的MAC地址未知
-从IP地址得到MAC地址：
-&ndash; 两台主机不在同一子网&mdash;&mdash;让网关处理（需要网关的MAC地址，对方的IP地址）</p>
-
-<p>-两台主机在同一子网&mdash;-通过ARP协议得到对方MAC地址：ARP协议：发出一个数据包，含被查询主机的IP地址，对方MAC地址一栏填FF：FF：FF：FF：FF：FF
- 收到这个包的主机会取出IP地址与自己的比较。</p>
-
-<p> <strong>传输层</strong></p>
-
-<p> 传来的数据包是哪个程序（进程）使用&mdash;-需要“端口”【每一个使用网卡程序的编号】
- 端口号为0~65535，其中0~1023被系统占用。</p>
-
-<p> 传输层：端口到端口
- 网络层：主机到主机
- Unix系统把主机+端口叫“套接字”socket</p>
-
-<p> UDP：简单易实现 可靠性差
- TCP：有确认机制的UDP</p>
-
-<p> <strong>应用层</strong></p>
-
-<p> 规定数据格式</p>
-
-<p> 上网</p>
-
-<hr />
-
-<p> 静态地址
- 本机IP、子网掩码、网关IP、DNS的IP
- 动态地址  DHCP协议【应用层协议，建立在UDP协议上】
- 每个子网中有一台计算机负责管理本网络中所有IP地址  “DHCP服务器”</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1030,23 +771,23 @@ Data：46~1500字节</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/11/08/python-wei-dao-2/">Python 味道[2]</a>
+        <a href="/blog/2016/08/28/r-is-coming-2/">R Is Coming(2)</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/11/06/python-hen-mei-1/">Python 味道[1]</a>
+        <a href="/blog/2016/07/25/kua-jing-dian-shang-ji-wan-dou-gong-zhu/">跨境电商记-豌豆公主</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/10/29/chapter1of2014/">Chapter1of2014</a>
+        <a href="/blog/2015/10/25/pythonku/">Python库</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/10/15/r-is-coming/">R Is Coming</a>
+        <a href="/blog/2015/10/22/python2-and-3chai-bie/">Python2&amp;3差别</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/10/04/pythonxiao-lu-xiang-guan/">Python效率相关</a>
+        <a href="/blog/2014/11/12/pythonwei-dao-3/">Python味道(3)</a>
       </li>
     
   </ul>
@@ -1062,7 +803,7 @@ Data：46~1500字节</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - yimmy -
+  Copyright &copy; 2016 - yimmy -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

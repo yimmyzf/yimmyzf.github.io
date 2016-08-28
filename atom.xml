@@ -4,7 +4,7 @@
   <title><![CDATA[A sentence A picture A day!]]></title>
   <link href="http://yimmyzf.github.io/atom.xml" rel="self"/>
   <link href="http://yimmyzf.github.io/"/>
-  <updated>2014-11-12T23:53:47+08:00</updated>
+  <updated>2016-08-28T15:21:45+08:00</updated>
   <id>http://yimmyzf.github.io/</id>
   <author>
     <name><![CDATA[yimmy]]></name>
@@ -12,6 +12,324 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[R Is Coming(2)]]></title>
+    <link href="http://yimmyzf.github.io/blog/2016/08/28/r-is-coming-2/"/>
+    <updated>2016-08-28T15:02:57+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2016/08/28/r-is-coming-2</id>
+    <content type="html"><![CDATA[<p>R的基本数据类型</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[跨境电商记-豌豆公主]]></title>
+    <link href="http://yimmyzf.github.io/blog/2016/07/25/kua-jing-dian-shang-ji-wan-dou-gong-zhu/"/>
+    <updated>2016-07-25T08:47:53+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2016/07/25/kua-jing-dian-shang-ji-wan-dou-gong-zhu</id>
+    <content type="html"><![CDATA[<p>创始人及平台介绍：
+翁永彪深耕日本市场多年，曾同合伙人和雷军一起成立日本金山
+豌豆公主创办于2014年，专注于日淘的跨境电商平台，目前已完成A+轮融资</p>
+
+<p>三次垂直：
+日本商品到国内消费者的垂直电商-只做女性-25-35岁的年龄层
+产品层面：美妆、个护-食品和健康产品-家居、家庭用品（与身体、小孩直接接触的）</p>
+
+<p>做日本的B端企业
+小红书、菠萝蜜、考拉、豌豆公主等跨境电商都只卖2000多种SKU，而日本至少有300万种，大家都是在买一些爆品
+日本大企业持不允许态度，原因如下：
+已有中国子公司，无法处理关系与矛盾
+法律风险
+侵犯商标的风险
+日文产品说明导致误用误食，如何承担对消费者的责任
+与大公司目前的合作方式：下游渠道扫货，正式合作不行
+（但是随着访日旅客消费行为的变化，会更加重视跨境）
+目前最大的问题：拿到稳定、大量的货源
+本土优先、越下游越拿不到货；今后要做的事：跟大公司一起去探讨跨境电商的政策，规避他们的担心，最好是<strong>他们自己不用出什么但中国用户相信这确实是他给我们的</strong>
+目前和日本一个B2C电商合作</p>
+
+<p>对于中小企业&mdash;Wonderfull品台（一站式服务）
+无初期费用，无固定成本，只要产品好，有什么<strong>品牌故事</strong>
+（**翁永彪观点：信息跨境才是跨境电商里面最核心的，大家不认识的产品太多，我们首先让你知道有这样的品牌，这个东西好在哪，解决什么，你才能想到有什么需要）</p>
+
+<p>品牌运营
+现在豌豆公主在做的事情，帮助日本中小企业做他们的品牌故事，拍视频，写文章，年代感、专注点。产品要先发到豌豆公主的中心仓，企业只需要发货其他都不用做</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python库]]></title>
+    <link href="http://yimmyzf.github.io/blog/2015/10/25/pythonku/"/>
+    <updated>2015-10-25T22:38:11+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2015/10/25/pythonku</id>
+    <content type="html"><![CDATA[<p><font color="darkred"><strong>math库：</strong></font>
+三角函数、开方根号、π、e为基数
+<font color="darkred"><strong>random库：</strong></font>
+seed、random、uniform、randint、randrange、choice(<list>)从列表中随机返回一个元素、shuffle(<list>)将列表中元素随机打乱、sample</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python2&amp;3差别]]></title>
+    <link href="http://yimmyzf.github.io/blog/2015/10/22/python2-and-3chai-bie/"/>
+    <updated>2015-10-22T19:16:40+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2015/10/22/python2-and-3chai-bie</id>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;在电脑上试运行GitHub上用python3.4编的一段代码【GitHub链接-github.com/xiaff/dbc-downloader】，功能是将豆瓣读书上的书与短评存成markdown或者html形式。本机使用的是python2.7，改代码过程顺便总结2与3的一些区别。</p>
+
+<p>具体参照<a href="http://old.sebug.net/paper/books/dive-into-python3/porting-code-to-python-3-with-2to3.html">python2to3</a></p>
+
+<ol>
+<li>print与print()</li>
+<li>Python 2有两种字符串类型：Unicode字符串和非Unicode字符串。Python 3只有Unicode一种类型</li>
+<li>Python 2有两个全局函数可以把对象强制转换成字符串：unicode()把对象转换成Unicode字符串，还有str()把对象转换为非Unicode字符串。Python 3只有一种字符串类型，所以str()函数即可完成所有的功能。</li>
+<li>long长整型</li>
+<li><p>字典类方法has_key()==>in运算符</p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>a_dictionary.has_key(&lsquo;PapayaWhip&rsquo;)</td>
+<td>&lsquo;PapayaWhip&rsquo; in a_dictionary</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>x + a_dictionary.has_key(y)</td>
+<td>x + (y in a_dictionary)</td>
+</tr>
+</tbody>
+</table>
+
+
+<p> in的优先级大于运算符+，运算符or的优先级高于运算符in</p></li>
+<li><p>返回列表的字典类方法</p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>a_dictionary.keys()</td>
+<td>list(a_dictionary.keys())</td>
+</tr>
+<tr>
+<td> 2</td>
+<td> a_dictionary.items()</td>
+<td>list(a_dictionary.items())</td>
+</tr>
+<tr>
+<td> 3</td>
+<td>a_dictionary.iterkeys()</td>
+<td>iter(a_dictionary.keys())</td>
+</tr>
+<tr>
+<td> 4</td>
+<td>[i for i in a_dictionary.iterkeys()]</td>
+<td>[i for i in a_dictionary.keys()]</td>
+</tr>
+<tr>
+<td> 5</td>
+<td>min(a_dictionary.keys())</td>
+<td>没变化</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>使用list()函数将keys()的返回值转换为一个静态列表</li>
+<li>这是另外一种视图(关于items()方法的)到列表的转换。2to3对values()方法返回值的转换也是一样</li>
+<li>Python 3里不再支持iterkeys()了。如果必要，使用iter()将keys()的返回值转换成为一个迭代器。</li>
+<li>2to3也能识别出keys()方法的返回值被立即传给另外一个会遍历整个序列的函数，所以也就没有必要先把keys()的返回值转换到一个列表。相反的，min()函数会很乐意遍历视图。这个过程对min()，max()，sum()，list()，tuple()，set()，sorted()，any()和all()同样有效</li>
+</ul>
+</li>
+<li><p>被重命名或者重新组织的模块</p>
+
+<p> <font color="MediumOrchid"><strong>http</strong></font></p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>import httplib</td>
+<td>import http.client</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>import Cookie</td>
+<td>import http.cookies</td>
+</tr>
+<tr>
+<td> 3</td>
+<td>import cookielib</td>
+<td>import http.cookiejar</td>
+</tr>
+<tr>
+<td> 4</td>
+<td>import BaseHTTPServer</td>
+<td>import http.server</td>
+</tr>
+<tr>
+<td> </td>
+<td>import SimpleHTTPServer</td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td>import CGIHttpServer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>http.client模块实现了一个底层的库，可以用来请求http资源，解析http响应。</li>
+<li>http.cookies模块提供一个蟒样的(Pythonic)接口来获取通过http头部(http header)Set-Cookie发送的cookies。</li>
+<li>常用的流行的浏览器会把cookies以文件形式存放在磁盘上，http.cookiejar模块可以操作这些文件。</li>
+<li>http.server模块实现了一个基本的http服务器</li>
+</ul>
+
+
+<p> <font color="MediumOrchid"><strong>urllib</strong></font></p>
+
+<p> Python 2有一些用来分析，编码和获取URL的模块，但是这些模块就相互重叠。在Python 3里，这些模块被重构、组合成了一个单独的包</p>
+
+<table>
+<thead>
+<tr>
+<th> Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>import urllib</td>
+<td>import urllib.request, urllib.parse, urllib.error</td>
+</tr>
+<tr>
+<td> 2</td>
+<td>import urllib2</td>
+<td>import urllib.request, urllib.error</td>
+</tr>
+<tr>
+<td> 3</td>
+<td>import urlparse</td>
+<td>import urllib.parse</td>
+</tr>
+<tr>
+<td> 4</td>
+<td>import robotparser</td>
+<td>import urllib.robotparser</td>
+</tr>
+<tr>
+<td> 5</td>
+<td>from urllib import FancyURLopener</td>
+<td>from urllib.request import FancyURLopener</td>
+</tr>
+<tr>
+<td>  </td>
+<td>from urllib import urlencode</td>
+<td>from urllib.parse import urlencode</td>
+</tr>
+<tr>
+<td> 6</td>
+<td>from urllib2 import Request</td>
+<td>from urllib.request import Request</td>
+</tr>
+<tr>
+<td>  </td>
+<td>from urllib2 import HTTPError</td>
+<td>from urllib.error import HTTPError</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p> 全局函数raw_input()和input()</p>
+
+<table>
+<thead>
+<tr>
+<th>Notes</th>
+<th>Python2</th>
+<th>Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>raw_input()</td>
+<td>input()</td>
+</tr>
+<tr>
+<td>2</td>
+<td>raw_input(&lsquo;prompt&rsquo;)</td>
+<td>input(&lsquo;prompt&rsquo;)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>input()</td>
+<td>eval(input())</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+
+
+<hr />
+
+<p>几点：</p>
+
+<ul>
+<li><p><font color="RoyalBlue">input问题：</font>在python2中使用，若使用input函数输入时需要加双引号，否则不是str类型。input和raw_input的区别</p></li>
+<li><p><font color="RoyalBlue">utf8 编码问题：</font>
+open(file,&lsquo;w&rsquo;,encoding=&lsquo;utf-8&rsquo;)在python2中的不可用性
+解决办法是去掉encoding=&lsquo;utf-8&#8217;，在代码开头加入</p>
+
+<p>  <code>import sys</code></p>
+
+<p>  <code>reload(sys)</code></p>
+
+<p>  <code>sys.setdefaultencoding('utf8')</code></p></li>
+<li><p><font color="RoyalBlue">urllib2的调用</font>使用urllib2发请求时注意R要大写，是urllib2.Request</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python味道(3)]]></title>
+    <link href="http://yimmyzf.github.io/blog/2014/11/12/pythonwei-dao-3/"/>
+    <updated>2014-11-12T23:55:08+08:00</updated>
+    <id>http://yimmyzf.github.io/blog/2014/11/12/pythonwei-dao-3</id>
+    <content type="html"><![CDATA[<h4>import引入模块</h4>
+
+<h4>使用with自动关闭资源</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python 味道[2]]]></title>
@@ -426,16 +744,24 @@ print const.MY_SECOND_CONSTANT
 
 <p>“驯鹿”学名“角鹿”，他们的视力、皮毛、茸角、嗅觉、蹄子已经全然适应了低温环境。2012年英国伦敦大学学院研究者发现，驯鹿是唯一一种能够看见紫外线的哺乳动物。人类的视觉只能看到波长400nm以上的光线，驯鹿的视觉范围则低于320nm。虽然这一范围仅仅覆盖我们基于黑光帮助下所能看见的所有光谱的一部分，但足以帮驯鹿在北极的炽白光线中看清东西。会飞的驯鹿拉着圣诞老人的雪橇。</p>
 
-<p>加载包</p>
+<p>先简单介绍一下准备工作</p>
 
-<p><code>&gt;install.packages("ggplot2")</code></p>
+<p>1、安装R</p>
 
-<p><code>&gt;install.packages("gcookbook")</code></p>
+<p>2、安装R Studio</p>
+
+<p>3、加载包</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>install.packages("ggplot2")
+</span><span class='line'>install.packages("gcookbook")</span></code></pre></td></tr></table></div></figure>
+
 
 <p>下载的二进制程序包在/var/folders/_h/r8xs1s7111z5dkhm642q83lr0000gn/T//RtmpBaf4d4/downloaded_packages里
 【注：若有错误信息提示下载长度不等于报告长度&mdash;&ndash;>重新多下几次即可，网络问题】</p>
 
-<p>使用包
+<p>4、使用包
 <code>&gt;library(ggplot2)</code></p>
 
 <p><strong>关于help</strong>
@@ -972,469 +1298,6 @@ end~~</p>
 
 <p>稳定排序：插入排序、冒泡排序、归并排序、计数排序、基数排序、桶排序
 不稳定：选择排序、快速排序、堆排序</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Leetcode-atoi&rev Words]]></title>
-    <link href="http://yimmyzf.github.io/blog/2014/06/07/leetcode-atoi/"/>
-    <updated>2014-06-07T10:37:50+08:00</updated>
-    <id>http://yimmyzf.github.io/blog/2014/06/07/leetcode-atoi</id>
-    <content type="html"><![CDATA[<h2>String to Integer</h2>
-
-<p>注意的几点：</p>
-
-<pre><code>* 字符串为空
-* 全是空格
-* 字符串前的空格要忽略掉
-* 对‘+’和‘-’的处理
-* 遇到非数字的字符就返回当前值而不是返回0
-* int的范围  -2147483648~2147483647
-</code></pre>
-
-<p>【判断与int最值比较时记得*signal】</p>
-
-<p>又用Python写了一遍，遇到的小问题：</p>
-
-<pre><code>* 空字符串str==''
-* elif
-* 判断条件中要加入i&lt;len(str)
-* 需要用ord()将字符转换成ASCII码
-</code></pre>
-
-<h2>Reverse words in a string</h2>
-
-<p>第一个想法是，用空格将句子分割，再将单词组合
-第二个想法，之前看过类似的，翻转整个句子，再翻转每个单词（同一个函数）
-一开始按照第二种想法写了一下发现翻转之后的实现方法由于有连续空格与一类似，还多了翻转，索性直接用第一种:(</p>
-
-<p>//注意要剔除收尾空格，将连续空格转为一个空格</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>void reverseWords(string &s) {
-</span><span class='line'>    if(s=="")return;
-</span><span class='line'>    
-</span><span class='line'>    stringstream ss(s);// Insert the string into a stream
-</span><span class='line'>    stack&lt;string&gt; tokens;// hold words
-</span><span class='line'>    string buf;//buffer string
-</span><span class='line'>    s="";
-</span><span class='line'>    while(ss&gt;&gt;buf)
-</span><span class='line'>      tokens.push(buf);
-</span><span class='line'>    
-</span><span class='line'>    while(!tokens.empty())
-</span><span class='line'>    {
-</span><span class='line'>        buf=tokens.top();
-</span><span class='line'>        s=s+buf;
-</span><span class='line'>        if(tokens.size()&gt;1)s=s+' ';
-</span><span class='line'>        tokens.pop();
-</span><span class='line'>    }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>用的数据结构为栈stack，要是用vector注意<strong>push_back(),pop_back(),buf=tokens[tokens.size()-1]</strong>
-  vector没有top方法
-然后用Python做了一下，一条语句就能搞定。。。。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def reverseWords(self, s):
-</span><span class='line'>    return ' '.join(s.split()[::-1])</span></code></pre></td></tr></table></div></figure>
-
-
-<p>顺便小结一下和字符串有关的操作：</p>
-
-<blockquote><p>  去掉两边的空格及指定符号</p>
-
-<pre><code>s.strip()
-s.lstrip()//去掉字符串左边开始的空格
-s.rstrip(',')//去掉字符串右边的连续逗号
-</code></pre>
-
-<p>  #strcpy(s1,s2) 复制</p>
-
-<pre><code>s2=s1
-</code></pre>
-
-<p>  #strcat(s1,s2) 连接</p>
-
-<pre><code>s1+=s2
-</code></pre></blockquote>
-
-<pre><code>连接数组中多个字符串：separator.join(strlist)  其中separator=','  strlist=['apple','pie','cake']
-</code></pre>
-
-<blockquote><p>  查找单个字符</p>
-
-<pre><code>#strchr(s1,c)
-position=s1.index(c)
-</code></pre>
-
-<p>  #strstr(s1,s2)查找字符串</p>
-
-<pre><code>index=s1.find(s2)//返回位置，如没有返回-1
-</code></pre>
-
-<p>  #strcmp</p>
-
-<pre><code>cmp(s1,s2)
-</code></pre>
-
-<p>  #strlen(s)</p>
-
-<pre><code>len(s)
-</code></pre>
-
-<p>  s1=s1.upper()</p>
-
-<pre><code>s2=s2.lower()
-</code></pre>
-
-<p>  #strrev(s) 翻转字符串</p>
-
-<pre><code>s=s[::-1]
-</code></pre>
-
-<p>  s.split(&lsquo;,&rsquo;)</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Leetcode-merge]]></title>
-    <link href="http://yimmyzf.github.io/blog/2014/06/06/leetcode-merge/"/>
-    <updated>2014-06-06T20:28:37+08:00</updated>
-    <id>http://yimmyzf.github.io/blog/2014/06/06/leetcode-merge</id>
-    <content type="html"><![CDATA[<p>leetcode里四道与merge有关的题~</p>
-
-<h2>Merge Sorted Array </h2>
-
-<p>思路：从结尾开始合并，在数组A中从m+n-1
-记得简化A[i]=A[ka];ka&mdash; ==> A[i]=A[ka&mdash;] <strong>习惯养成</strong></p>
-
-<h2>Merge Two Sorted Lists</h2>
-
-<p>先用循环写了一遍：头指针指向二者较小的，合并，尾部连接
-写的很啰嗦，用递归又写了一下</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
-</span><span class='line'>{
-</span><span class='line'>  if(l1==NULL)return l2;
-</span><span class='line'>  if(l2==NULL)return l1;
-</span><span class='line'>  
-</span><span class='line'>  ListNode *rHead=NULL;
-</span><span class='line'>  if(l1-&gt;val&lt;l2-&gt;val)
-</span><span class='line'>  {
-</span><span class='line'>      rHead=l1;
-</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1-&gt;next,l2);
-</span><span class='line'>  }
-</span><span class='line'>  else
-</span><span class='line'>  {
-</span><span class='line'>      rHead=l2;
-</span><span class='line'>      rHead-&gt;next=mergeTwoLists(l1,l2-&gt;next);
-</span><span class='line'>  }
-</span><span class='line'>  
-</span><span class='line'>  return rHead;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>有个不好的习惯声明的指针变量总是忘记  =NULL</p>
-
-<h2>Merge k Sorted Lists</h2>
-
-<p>使用循环不断两两合并</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
-</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
-</span><span class='line'>    int i;
-</span><span class='line'>    ListNode *l=lists[0];
-</span><span class='line'>    for(i=1;i&lt;lists.size();i++)
-</span><span class='line'>    {
-</span><span class='line'>        l=mergeTwoLists(l,lists[i]);
-</span><span class='line'>    }
-</span><span class='line'>    
-</span><span class='line'>    return l;
-</span><span class='line'>    
-</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
-
-
-<p>超时
-不断的两两合并</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ListNode *mergeKLists(vector&lt;ListNode *&gt; &lists) {
-</span><span class='line'>    if(lists.size()&lt;=0) return NULL;
-</span><span class='line'>    int size=lists.size(),half,i;
-</span><span class='line'>    ListNode *l=lists[0];
-</span><span class='line'>    while(size&gt;1)
-</span><span class='line'>    {
-</span><span class='line'>        half=(size+1)/2;
-</span><span class='line'>        for(i=0;i+half&lt;size;i++)
-</span><span class='line'>        {
-</span><span class='line'>            lists[i]=mergeTwoLists(lists[i],lists[i+half]);
-</span><span class='line'>        }
-</span><span class='line'>        size=half;
-</span><span class='line'>    }
-</span><span class='line'>    return lists[0];
-</span><span class='line'>    
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[鸡血文]]></title>
-    <link href="http://yimmyzf.github.io/blog/2014/06/05/ji-xie-wen/"/>
-    <updated>2014-06-05T09:20:39+08:00</updated>
-    <id>http://yimmyzf.github.io/blog/2014/06/05/ji-xie-wen</id>
-    <content type="html"><![CDATA[<p>  清早，看了一篇文章，让昨天有点down的心情好了很多，将部分文章进行翻译分享一下。
-  文章链接 <a href="http://zenhabits.net/career/">A Guide for Young People: What to Do With Your Life</a></p>
-
-<p>  <strong>学会接受不适</strong></p>
-
-<p>  你能锻炼的最重要的技能之一就是接受不适。最好的事情通常都是困难的，如果你逃避困难和不适，你将错过这些美好的事情。
-  学习、写作、婚姻、马拉松，这些都是不简单的，但是他们都是能给人们打来成就感的。
-  当你发现自己在逃避不适感时，推动自己一下</p>
-
-<p>  <strong>学会接受不确定</strong></p>
-
-<p>  <strong>克服分心与拖延</strong></p>
-
-<p>  你能抓住机会是因为你能够面对不确定性与不适感，但是如果你花时间在社交媒体和看电视上将能难成功。
-  分心与拖延是逃避困难和不适的表现。如果你能很好的接受困难这才是你能有别于其他人。</p>
-
-<p>  <strong>了解你的思维的运作方式</strong></p>
-
-<p>  写博客。你将被迫记录你生活中发生了什么，你学习了什么。这是自我成长的好工具，我推荐给每一给年轻的朋友。</p>
-
-<p>  <strong>小事积累</strong></p>
-
-<p>  从小事做起，如果可能每天都积累，它会随着时间不断增值。</p>
-
-<p>  <strong>变得值得信赖</strong></p>
-
-<p>  每一个任务做到最好，坦率，承认错误改正错误，deadline</p>
-
-<p>  You can start today, and see what life has to offer you.</p>
-
-<hr />
-
-<p>  写这篇文章是因为里面的几个点很触动我：1.迎接不适感与不确定性 2.写博客 3.每一件事情做到最好</p>
-
-<p>  我想这是因为之前的生活顺利，让我这个人缺失了对生活某些方面的理解。这一段的生活在提醒我人不能总生活在舒适区，这样你就是一个生活在脆弱区的人，一旦某天生活面临一个改变，将无所适从。
-  生活之所以有趣有意义，就是因为它能够充满挑战与不确定性，最有意思的地方就是你迎接未知，收获惊喜。我放弃过学习弹琴，放弃过200米，放弃过当一名幼师，放弃过努力选择一个好的lab和intern，曾经的那些非常合理的理由已经没有了意义，如今后悔，所以我知道坚持的意义。</p>
-
-<p>  坚持写博客真的不是容易的事，主要是每天忙到11点多的时候，总是想离开实验室早点休息准备迎接明天，或许是由于生活中自己认为有意义的事太少。change it。</p>
-
-<p>  关于每件事做到最好，是因为最近一个工作中一个简单的报告。再简单，minjun依然能谈到排版，字多图少，以及SQL语句结果中应排查的问题。我觉得哪怕一件再小的事也应该完美点。</p>
-
-<p>  <p style="color:darksalmon">HAVE A NICE DAY！</p></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Markdown小结]]></title>
-    <link href="http://yimmyzf.github.io/blog/2014/05/29/markdownxiao-jie/"/>
-    <updated>2014-05-29T17:15:32+08:00</updated>
-    <id>http://yimmyzf.github.io/blog/2014/05/29/markdownxiao-jie</id>
-    <content type="html"><![CDATA[<p>对自己常用的进行一个小结，希望能更好的用它来writing。
-小结了第一版之后发现还是翻译官方文档吧。。。<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">markdown</a>。</p>
-
-<p>网页版<a href="http://markdown-here.com/livedemo.html">markdown</a></p>
-
-<h2>标题</h2>
-
-<blockquote><p>   #H1</p>
-
-<p>   ##H2</p>
-
-<p>   ###H3</p>
-
-<p>   H1  =====</p>
-
-<p>  H2   &mdash;&mdash;&ndash;</p></blockquote>
-
-<h2>强调</h2>
-
-<blockquote><pre><code>斜体 ： *星号* 或者 _下划线_
-加粗：**星号\**   __下划线__
-斜体和加粗: **__**
-划去：~~划去~~
-</code></pre></blockquote>
-
-<h2>区块引用</h2>
-
-<blockquote><p>   使用>在每行的最前面 表示区块
-   使用>>进行嵌套</p></blockquote>
-
-<h2>列表</h2>
-
-<p>无序列表使用 * 或 — 或 +。
-有序列表 数字接英文句点 空格:</p>
-
-<ol>
-<li></li>
-<li></li>
-</ol>
-
-
-<h2>代码</h2>
-
-<p>注意&#8220;`  与 &#8220;`第一个之后要换行在写代码，否则在rake generate时会报错in `rescue in pygments&#8217;: Pygments can&rsquo;t parse unknown language: def. (RuntimeError)</p>
-
-<h2>链接</h2>
-
-<p> [text](url &ldquo;title&rdquo;) title可省
-参考式的[google] 后接[google]:<a href="http://www.google.com/">http://www.google.com/</a>
-参考式的[google][1] 后接[1]:<a href="http://www.google.com/">http://www.google.com/</a></p>
-
-<h2>图片</h2>
-
-<ol>
-<li>![Alt text](/images/img.jpg &ldquo;title&rdquo;)</li>
-<li> 我自己常用的是 &lt;img src=&ldquo;/images/0311.jpg&rdquo; width=&ldquo;200&rdquo; height=&ldquo;200&rdquo; /></li>
-</ol>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Protocol]]></title>
-    <link href="http://yimmyzf.github.io/blog/2014/05/29/protocol/"/>
-    <updated>2014-05-29T16:40:09+08:00</updated>
-    <id>http://yimmyzf.github.io/blog/2014/05/29/protocol</id>
-    <content type="html"><![CDATA[<p>[TOC]</p>
-
-<p>回归写作第一篇
-关于协议</p>
-
-<p><strong>层模型</strong>
-因特网协议栈<strong>五层模型</strong>：应用层、传输层、网络层、链路层、物理层</p>
-
-<p>OSI <strong>七层模型</strong>:应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</p>
-
-<p>每一层都有各自的协议</p>
-
-<p><strong>物理层</strong></p>
-
-<p>电脑组网：光纤、电缆、双绞线、无线电波；传输0、1电信号</p>
-
-<p><strong>链路层</strong></p>
-
-<p>以太网Ethernet 一组电信号构成一个“帧”
-Head：18字节
-Data：46~1500字节</p>
-
-<p>MAC地址
-以太网规定，入网的设备必须有“网卡”接口。MAC地址&mdash;网卡的地址，独一无二，12个十六进制数表示
-以太网中数据包的送达：向本网络中所有的计算机发送，让每台计算机自己判断，是否自己是接受者，与自身MAC地址相同就接收不同就丢弃。</p>
-
-<p><strong>网络层</strong></p>
-
-<p>如果两个计算机不在同一个网络，广播无法到达。
-网络是由无数子网络共同组成的。
-需要一种方法判断MAC地址是否同一子网。同一子网时采用广播方式发送，否则路由查询。
-网络层&mdash;-计算机是否属于同一子网络。网络地址由管理员分配。网络地址确定计算机所在的子网络，MAC地址将数据包送到该子网络中得目标网卡。</p>
-
-<p>IP协议
-“子网掩码”&mdash;判断ip地址是否在同一个网络：将两个IP地址分别与子网掩码进行与运算AND，如果结果相同说明在同一子网。</p>
-
-<p>IP数据包
-整个IP数据包总长度最大为65535字节，若数据包大于1500字节，需分割成几个以太网数据包分开发送</p>
-
-<p>ARP协议（得到同一子网的主机MAC地址）
-一般情况是IP地址已知，但对方的MAC地址未知
-从IP地址得到MAC地址：
-&ndash; 两台主机不在同一子网&mdash;&mdash;让网关处理（需要网关的MAC地址，对方的IP地址）</p>
-
-<p>-两台主机在同一子网&mdash;-通过ARP协议得到对方MAC地址：ARP协议：发出一个数据包，含被查询主机的IP地址，对方MAC地址一栏填FF：FF：FF：FF：FF：FF
- 收到这个包的主机会取出IP地址与自己的比较。</p>
-
-<p> <strong>传输层</strong></p>
-
-<p> 传来的数据包是哪个程序（进程）使用&mdash;-需要“端口”【每一个使用网卡程序的编号】
- 端口号为0~65535，其中0~1023被系统占用。</p>
-
-<p> 传输层：端口到端口
- 网络层：主机到主机
- Unix系统把主机+端口叫“套接字”socket</p>
-
-<p> UDP：简单易实现 可靠性差
- TCP：有确认机制的UDP</p>
-
-<p> <strong>应用层</strong></p>
-
-<p> 规定数据格式</p>
-
-<p> 上网</p>
-
-<hr />
-
-<p> 静态地址
- 本机IP、子网掩码、网关IP、DNS的IP
- 动态地址  DHCP协议【应用层协议，建立在UDP协议上】
- 每个子网中有一台计算机负责管理本网络中所有IP地址  “DHCP服务器”</p>
 ]]></content>
   </entry>
   
